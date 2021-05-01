@@ -1,0 +1,62 @@
+nav {
+    height: 50px;
+    background: #FF5F6D;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFC371, #FF5F6D);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFC371, #FF5F6D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.navbar {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.navbar-items {
+    padding: 0 10px;
+    list-style: none;
+    cursor: pointer;
+    color: #f1f1f1;
+}
+
+.navbar-btn {
+    display: none;
+}
+
+@media screen and (max-width: 500px) {
+    .navbar-btn{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        line-height: 50px;
+        padding-right: 10px;
+        background: transparent;
+        color: #f1f1f1;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+    .navbar {
+        flex-direction: column;
+        height: 200px;
+    }
+    .navbar-items {
+        height: 50px;
+        width: 100%;
+        padding: 0;
+        line-height: 50px;
+        border-bottom: 1px solid #f1f1f1;
+        background: #FF5F6D;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #FFC371, #FF5F6D);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #FFC371, #FF5F6D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        transition: 0.4ms ease-in-out;
+    }
+    .navbar-items:nth-child(1){
+        margin-top: 50px;
+        border-top: 1px solid #f1f1f1;
+    }
+}
