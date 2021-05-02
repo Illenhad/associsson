@@ -1,9 +1,10 @@
 nav {
     height: 50px;
-    background: #FF5F6D;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #FFC371, #FF5F6D);  /* Chrome 10-25, Safari 5.1-6 */
+    background: #FF5F6D; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFC371, #FF5F6D); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #FFC371, #FF5F6D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
 .navbar {
     margin: 0;
     padding: 0;
@@ -13,6 +14,7 @@ nav {
     align-items: center;
     position: relative;
 }
+
 .navbar-items {
     visibility: hidden;
     opacity: 0;
@@ -22,19 +24,64 @@ nav {
     color: #f1f1f1;
     transition: 0s visibility, .2s opacity ease-in-out;
 }
-.navbar-btn {
-    display: none;
-}
+
 .active > .navbar-items {
     visibility: visible;
     opacity: 1;
 }
+
+.navbar-btn {
+    display: none;
+    cursor: pointer;
+}
+
+/* Button burger animation */
+.btn-row {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    height: 10px;
+    margin: 6px 0;
+    transition: .4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.btn-row:nth-child(1) {
+    width: 50%;
+}
+
+.btn-row:nth-child(2) {
+    width: 100%;
+}
+
+.btn-row:nth-child(3) {
+    width: 75%;
+}
+
+.active > .btn-row:nth-child(1) {
+    transform-origin: bottom;
+    transform: rotatez(45deg) translate(8px, 5px)
+}
+
+.active > .btn-row:nth-child(2) {
+    transform-origin: top;
+    transform: rotatez(-45deg)
+}
+
+.active > .btn-row:nth-child(3) {
+    transform-origin: bottom;
+    width: 50%;
+    transform: translate(14px, -11px) rotatez(45deg);
+}
+/* END Button burger animation */
+
 @media screen and (max-width: 500px) {
-    .navbar-btn{
-        display: block;
+    .navbar-btn {
+        display: flex;
+        flex-direction: column;
         position: absolute;
         top: 0;
         right: 0;
+        height: 50px;
+        width: 50px;
         line-height: 50px;
         padding-right: 10px;
         background: transparent;
@@ -43,21 +90,24 @@ nav {
         outline: none;
         cursor: pointer;
     }
+
     .navbar {
         flex-direction: column;
         height: 200px;
     }
+
     .navbar-items {
         height: 50px;
         width: 100%;
         padding: 0;
         line-height: 50px;
         border-bottom: 1px solid #f1f1f1;
-        background: #FF5F6D;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #FFC371, #FF5F6D);  /* Chrome 10-25, Safari 5.1-6 */
+        background: #FF5F6D; /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #FFC371, #FF5F6D); /* Chrome 10-25, Safari 5.1-6 */
         background: linear-gradient(to right, #FFC371, #FF5F6D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     }
-    .navbar-items:nth-child(1){
+
+    .navbar-items:nth-child(1) {
         margin-top: 50px;
         border-top: 1px solid #f1f1f1;
     }

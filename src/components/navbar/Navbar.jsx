@@ -13,11 +13,15 @@ function Navbar() {
     useEffect(() => {
         const changeWidth = () => {
             setWindowWidth(window.innerWidth);
-            if (window.innerWidth > 500) { setToggleMenu(false); }
+            if (window.innerWidth > 500) {
+                setToggleMenu(false);
+            }
         };
 
         window.addEventListener('resize', changeWidth);
-        return () => { window.removeEventListener('resize', changeWidth); }
+        return () => {
+            window.removeEventListener('resize', changeWidth);
+        }
     }, []);
 
     return (
@@ -27,7 +31,11 @@ function Navbar() {
                 <li className="navbar-items">Page 2</li>
                 <li className="navbar-items">Page 3</li>
             </ul>
-            <button onClick={toggleMenuSmallScreen} className="navbar-btn">BTN</button>
+            <button onClick={toggleMenuSmallScreen} className={(toggleMenu || windowWidth > 500) ? "navbar-btn active" : "navbar-btn"}>
+                <div className="btn-row"/>
+                <div className="btn-row"/>
+                <div className="btn-row"/>
+            </button>
         </nav>
     );
 }
