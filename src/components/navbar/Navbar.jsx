@@ -18,17 +18,15 @@ function Navbar() {
 
         window.addEventListener('resize', changeWidth);
         return () => { window.removeEventListener('resize', changeWidth); }
-    }, [toggleMenu]);
+    }, []);
 
     return (
         <nav>
-            {(toggleMenu || windowWidth > 500) && (
-                <ul className="navbar">
-                    <li className="navbar-items">Page 1</li>
-                    <li className="navbar-items">Page 2</li>
-                    <li className="navbar-items">Page 3</li>
-                </ul>
-            )}
+            <ul className={(toggleMenu || windowWidth > 500) ? "navbar active" : "navbar"}>
+                <li className="navbar-items">Page 1</li>
+                <li className="navbar-items">Page 2</li>
+                <li className="navbar-items">Page 3</li>
+            </ul>
             <button onClick={toggleMenuSmallScreen} className="navbar-btn">BTN</button>
         </nav>
     );
