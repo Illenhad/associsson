@@ -26,6 +26,7 @@ function Navbar() {
 
     return (
         <nav>
+            <img className="navbar-logo" alt="Logo" src={process.env.PUBLIC_URL + "images/favicon.ico"}/>
             <ul className={(toggleMenu || windowWidth > 500) ? "navbar active" : "navbar"}>
                 <li className="navbar-items">Page 1</li>
                 <li className="navbar-items">Page 2</li>

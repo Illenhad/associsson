@@ -1,8 +1,6 @@
 nav {
     height: 50px;
-    background: #FF5F6D; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #FFC371, #FF5F6D); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #FFC371, #FF5F6D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-image: linear-gradient(135deg, #920520 10%, #ec022b 100%);
 }
 
 .navbar {
@@ -15,6 +13,12 @@ nav {
     position: relative;
 }
 
+.navbar-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .navbar-items {
     visibility: hidden;
     opacity: 0;
@@ -22,7 +26,7 @@ nav {
     list-style: none;
     cursor: pointer;
     color: #f1f1f1;
-    transition: 0s visibility, .2s opacity ease-in-out;
+    transition: .2s opacity ease-in-out;
 }
 
 .active > .navbar-items {
@@ -71,6 +75,7 @@ nav {
     width: 50%;
     transform: translate(14px, -11px) rotatez(45deg);
 }
+
 /* END Button burger animation */
 
 @media screen and (max-width: 500px) {
@@ -102,9 +107,7 @@ nav {
         padding: 0;
         line-height: 50px;
         border-bottom: 1px solid #f1f1f1;
-        background: #FF5F6D; /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #FFC371, #FF5F6D); /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #FFC371, #FF5F6D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background-image: linear-gradient(135deg, #920520 10%, #ec022b 100%);
     }
 
     .navbar-items:nth-child(1) {
