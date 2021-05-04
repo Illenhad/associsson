@@ -1,7 +1,11 @@
 import logo from './logo.png';
 import './App.css';
+import LogiquePopup from './Components/PopupLogin_SignUp/LogiquePopup.js'
+import Popup from './Components/PopupLogin_SignUp/Popup.js'
 
 function App() {
+  const {revele,toggle} = LogiquePopup();
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +21,11 @@ function App() {
         >
           Suivez-nous
         </a>
+        <button onClick={toggle}>Log in</button>
+      <Popup
+        revele={revele}
+        cache={toggle}
+      />
       </header>
     </div>
   );
