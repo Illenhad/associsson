@@ -1,13 +1,14 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import './project_card.css'
 
 function ProjectCard(props) {
 
-    const {img_path, title, city, description} = props
-
+    const {img_path, title, description,categories} = props
+    console.log(categories)
     const cut_description = description.substr(1, 150)+"...";
-
+    
     return(
+        
         <>
         
            <div className="card-container">
@@ -20,7 +21,7 @@ function ProjectCard(props) {
 
                     <div className ="bodyCard">
                         <a href="">
-                            <h2> Déployer une application Django sur PythonAnywhere</h2>
+                            <h2> {title}</h2>
                             <p>{cut_description}</p>
                         </a>
                     </div>       
@@ -31,8 +32,13 @@ function ProjectCard(props) {
                        
                                 <h6>categories</h6>
                                 <ul>
-                                    <li>Wordpress</li>
-                                    <li>site vitrine</li>
+                                    {
+                                        categories.map(categorie => (
+                                            <li>{categorie}</li>
+                                        ))
+                                       
+                                    }
+                                    
                                 </ul>
                             </a>
                         </div>

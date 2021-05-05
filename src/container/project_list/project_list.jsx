@@ -7,15 +7,13 @@ import jsonData from '../../data/json_data.json'
 function Project_List() {
 
     const datas = jsonData
-    console.log("datas",datas)
-
     return(
         <div className="grid-4">
             {
                 datas.length > 0 ?
                     datas.map(card => (
-                 
-                        <ProjectCard key={card._id} img_path = {card.picture} name={card.name} city={card.address} description={card.about}/>
+
+                        <ProjectCard key={card._id} img_path = {card.picture} title={card.title} description={card.about} categories = {card.categories}/>
                  
                     ))
                     :
