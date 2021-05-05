@@ -28,21 +28,3 @@
 
 }
 
-/*@media (max-width: 1200px) {
-    .grid-4 > * {
-        width: calc(30% - 30px); 
-        
-    }
-}
-
-@media (max-width: 930px) {
-    .grid-4 > * {
-        width: calc(50% - 30px); 
-    }
-}
-
-@media (max-width: 650px) {
-    .grid-4 > * {
-        width: calc(100% - 30px); 
-    }
-}*/

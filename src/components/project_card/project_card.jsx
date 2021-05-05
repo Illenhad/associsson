@@ -18,12 +18,12 @@ function ProjectCard(props) {
                         </a>
                     </header> 
 
-                    <bodyCard>
+                    <div className ="bodyCard">
                         <a href="">
                             <h2> Déployer une application Django sur PythonAnywhere</h2>
                             <p>{cut_description}</p>
                         </a>
-                    </bodyCard>       
+                    </div>       
                     <div>
                         <div className="skills">
                             <a href="">

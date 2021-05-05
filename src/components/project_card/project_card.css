@@ -33,12 +33,12 @@ a {
 	margin: 20px;  
 }
 
-.card-container bodyCard h2 {
+.card-container .bodyCard h2 {
 	margin: 10px 20px;
 	color:rgba(255,255,255,.75)
 }
 
-.card-container bodyCard p {
+.card-container .bodyCard p {
 	margin: 20px;
 	color:#869ab8;
 	text-align: justify;

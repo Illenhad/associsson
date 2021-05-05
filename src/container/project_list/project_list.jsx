@@ -14,9 +14,9 @@ function Project_List() {
             {
                 datas.length > 0 ?
                     datas.map(card => (
-                    <div key={card._id}>
-                        <ProjectCard img_path = {card.picture} name={card.name} city={card.address} description={card.about}/>
-                    </div>
+                 
+                        <ProjectCard key={card._id} img_path = {card.picture} name={card.name} city={card.address} description={card.about}/>
+                 
                     ))
                     :
                     <div>
