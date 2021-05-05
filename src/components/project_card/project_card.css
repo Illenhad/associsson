@@ -1,36 +1,65 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
-* {
+.card-container * {
 	box-sizing: border-box;
 } 
 
-h3 {
+.card-container h3 {
 	margin: 10px 0;
 }
 
-h6 {
+.card-container h6 {
 	margin: 5px 0;
 	text-transform: uppercase;
 }
 
-p {
+.card-container p {
 	font-size: 16px;
 	line-height: 21px;
 }
 
-a {
+.card-container a {
 	text-decoration:none;
 }
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0,0.6);
+		transform: translateY(0px);
+	}
+
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0,0.2);
+		transform: translateY(-10px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0,0.6);
+		transform: translateY(0px);
+	}
+}
+
+
+
+
+.card-container:hover {
+
+	position: relative;
+	bottom: 5px;
+	box-shadow: 0px 15px 15px 0px rgba(0,0,0,0.75);
+}
+
 
 .card-container {
 	background-color: #1E1E2D;
 	border-radius: 5px;
-	box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
+	box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.75);
 	position: relative;
 	width: 350px;
 	max-width: 100%;
 	/*text-align: center;*/
 	margin: 20px;  
+	overflow:hidden;
+	border-radius: 10px 10px 10px 10px;
 }
 
 .card-container .bodyCard h2 {
@@ -38,11 +67,14 @@ a {
 	color:rgba(255,255,255,.75)
 }
 
+.card-container .bodyCard  {
+	overflow:hidden;
+}
+
 .card-container .bodyCard p {
 	margin: 20px;
 	color:#869ab8;
 	text-align: justify;
-	overflow: hidden;
 }
 
 .card-container .round {
@@ -57,6 +89,7 @@ a {
 
 .card-container img {
 	width: 100%;
+	
 }
 
 .skills {
@@ -65,7 +98,7 @@ a {
 	padding: 15px;
 	margin-top: 30px;
 	margin: 0;
-	border-top: 1px solid #fff;
+	border-top: 1px solid #869ab8;
 }
 
 .skills a{

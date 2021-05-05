@@ -12,6 +12,7 @@
 
 }
 .grid-4 > * {
+    margin:auto;
 	display: flex;
     justify-content:center;
 
@@ -27,4 +28,19 @@
     text-rendering: auto;
 
 }
+
+@media (max-width: 797px) { 
+    .grid-4 {
+        margin:auto;
+        display: flex;
+        align-items: stretch;
+        flex-direction: column;
+        flex-wrap: wrap;
+        
+        /* Inline-block fallback */
+        letter-spacing: -0.31em;
+        text-rendering: optimizespeed;
+    
+    }
+ }
 

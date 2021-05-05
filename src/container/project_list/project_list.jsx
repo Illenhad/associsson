@@ -18,8 +18,8 @@ function Project_List() {
                     ))
                     :
                     <div>
-                    Aucun projet n'a encore été publié
-                </div>
+                        Aucun projet n'a encore été publié
+                    </div>
             }
         </div>
     );
