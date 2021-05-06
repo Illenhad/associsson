@@ -1,8 +1,7 @@
 :root{
-    --card-bg:#1e1e2d;
-    --main-bg:#25283c;
+    --card-bg:#263829;
+    --main-bg:#0e1612;
     --main-text:#869ab8;
     --second-text:rgba(255,255,255,.7);
-    --second-bg:#f31d58;
-
+    --second-bg:#37d123;
 }
