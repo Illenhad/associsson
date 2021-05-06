@@ -1,13 +1,14 @@
 @import url(../../color.css);
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
-*{
+
+.wrapper *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
 .overlay{
-    position: absolute;
+    position: fixed;
     top:0;
     left:0;
     width: 100%;
@@ -16,7 +17,7 @@
     z-index: 100;
 }
 .wrapper{
-    position: fixed;
+    position: absolute;
     overflow: hidden;
     top:50%;
     left:50%;
