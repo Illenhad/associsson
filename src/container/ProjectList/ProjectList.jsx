@@ -8,7 +8,7 @@ function Project_List() {
 
     return (
        
-        <div className="col-4 col-3 col-2 col-1">
+        <div className="col-5 col-4 col-3 col-2 col-1">
           
                     {
                         jsonData.map(card => (
