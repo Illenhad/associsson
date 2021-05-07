@@ -12,8 +12,8 @@
 }
 
 .card-container p {
-    font-size: 16px;
-    line-height: 21px;
+    font-size: 50%;
+    line-height: 100%;
 }
 
 .card-container a {
@@ -32,7 +32,7 @@
 
 .card-container .bodyCard h2 {
     margin: 60px 20px 10px 20px;
-    font-size: 29px;
+    font-size: 90%;
     color: var(--light-first)
 }
 
@@ -78,7 +78,7 @@
     border: 1px solid var(--light-card-bg-dark);
     border-radius: 2px;
     display: inline-block;
-    font-size: 12px;
+    font-size: 50%;
     margin: 0 7px 7px 0;
     padding: 7px;
     background-color: var(--light-accentuation);
