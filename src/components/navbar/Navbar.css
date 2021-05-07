@@ -1,6 +1,13 @@
+<<<<<<< HEAD
 nav {
     height: 50px;
     background-image: linear-gradient(135deg, #920520 10%, #ec022b 100%);
+=======
+@import url(../../color.css);
+nav {
+    height: 50px;
+    background-image: linear-gradient(135deg, var(--card-bg-dark) 10%, var(--card-bg) 100%);
+>>>>>>> feature/projectList
 }
 
 .navbar {

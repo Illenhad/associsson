@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url(../../color.css);
+.card-container {
+	background-color: var(--light-bg);
+	border-radius: 0 0 5px 5px;
+	box-shadow: 0 10px 10px 0 rgba(0,0,0,0.2);
+	position: relative;
+	width: 300px;
+	margin: 20px;  
+	overflow:hidden;
+}
+
+.card-container p {
+    font-size: 50%;
+    line-height: 100%;
+}
+
+.card-container a {
+    text-decoration: none;
+}
+
+.card-container:hover {
+    position: relative;
+    bottom: 5px;
+    box-shadow: 0 12px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-container .bodyCard {
+    overflow: hidden;
+}
+
+.card-container .bodyCard h2 {
+    margin: 60px 20px 10px 20px;
+    font-size: 60%;
+    color: var(--light-first)
+}
+
+.card-container .bodyCard p {
+    margin: 20px;
+    color: var(--light-second);
+    text-align: justify;
+    font-size: 40%;
+}
+
+.card-container .round {
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    left: 50%;
+    z-index: 2;
+    padding: 3px;
+    width: 100px;
+    height: 100px;
+    background: var(--light-accentuation);
+    transform: translate(-50%, -50%);
+}
+
+.card-container img {
+    width: 100%;
+}
+
+.skills {
+    background-color: var(--light-card-bg);
+    text-align: left;
+    padding: 15px;
+    margin: 0;
+    border-top: 1px solid var(--light-accentuation);
+    color: var(--light-first)
+}
+
+.skills h6{
+    font-size: 50%;
+}
+
+.skills ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.skills ul li {
+    border: 1px solid var(--light-card-bg-dark);
+    border-radius: 2px;
+    display: inline-block;
+    font-size: 40%;
+    margin: 0 2px 2px 0;
+    padding: 7px;
+    background-color: var(--light-accentuation);
+    color:#fff;
+}
+
+.Header {
+    display: block;
+    height: 150px;
+    background: var(--light-card-bg-dark);
+    color: var(--light-main-text);
+    text-align: center;
+    font-size: 20px;
+    border-bottom: 2px solid var(--light-accentuation);
+}
+

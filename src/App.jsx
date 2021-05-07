@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import logo from './logo.png';
 import './App.css';
 import Navbar from "./components/navbar/Navbar";
@@ -23,6 +24,19 @@ function App() {
             <Footer/>
         </div>
     );
+=======
+import './App.css';
+import ProjectList from "./container/ProjectList/ProjectList";
+function App() {
+
+  return (
+    <div className="App">
+      <header className="App-header">
+          <ProjectList/>
+      </header>
+    </div>
+  );
+>>>>>>> feature/projectList
 }
 
 export default App;
