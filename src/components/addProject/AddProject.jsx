@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import "./addProject.css";
 
 export default class AddProject extends Component {
 
@@ -47,45 +48,48 @@ export default class AddProject extends Component {
  
     render() {
         return (
-            <React.Fragment>
-                <h1>NOUVEAU PROJET</h1>
+            <div id="container">
+                <h1>Nouveau projet</h1>
                 <form onSubmit={this.onSubmit}>
 
-                    <label for="name">Nom</label>
-                    <input 
-                        type="text" 
-                        name="name" 
-                        onChange={this.onChange}
-                        value={this.state.nom}
-                    />
-
-                    <label for="category">Catégorie</label>
-                    <select 
-                        name="category"
-                        onChange={this.onChange}
-                        value={this.state.nom}
-                        >
-                        {/* TODO : appeler le webservice qui retourne les catégories enregistrées en base */}
-                        <option value="">--Sélectionnez une catégorie</option>
-                        <option value="1">Site Internet</option>
-                        <option value="2">Logiciel administratif</option>
-                        <option value="3">Application mobile</option>
-                    </select>
-
-                    <label for="description">Description</label>
-                    <textarea 
-                        name="description" 
-                        rows="5"
-                        onChange={this.onChange}
-                        value={this.state.description}
-                    />
-
-                    <input type="submit" value="Valider" />
+                    <div>
+                        <div class="info-unit">
+                            <label class="label" for="name">Nom</label>
+                            <input 
+                                type="text" 
+                                name="name" 
+                                onChange={this.onChange}
+                                value={this.state.nom}
+                            />
+                        </div>
+                        <div class="info-unit">
+                            <label class="label" for="category">Catégorie</label>
+                            <select 
+                                name="category"
+                                onChange={this.onChange}
+                                value={this.state.nom}
+                                >
+                                {/* TODO : appeler le webservice qui retourne les catégories enregistrées en base */}
+                                <option value="">--Sélectionnez une catégorie</option>
+                                <option value="1">Site Internet</option>
+                                <option value="2">Logiciel administratif</option>
+                                <option value="3">Application mobile</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="info-unit">
+                        <label class="label" for="description">Description</label>
+                        <textarea 
+                            name="description" 
+                            rows="5"
+                            onChange={this.onChange}
+                            value={this.state.description}
+                        />
+                    </div>
+                    <input class="button" type="submit" value="Valider" />
                 </form>
-
-                {this.createProject()}
                 
-            </React.Fragment>
+            </div>
         )
     }
 }
