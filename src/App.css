@@ -1,14 +1,17 @@
-.App {
-  
+@import url(color.css);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-
 .App-header {
-  background-color: #282c34;
+  background-color: var(--main-bg);
   min-height: calc(100vh - 50px);
   display: flex;
   flex-direction: column;

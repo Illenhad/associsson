@@ -1,0 +1,9 @@
+
+.grid-4 > * {
+
+	display: block; 
+    display: inline-block;
+    letter-spacing: normal;
+    text-rendering: auto;
+}
+
