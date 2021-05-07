@@ -2,7 +2,7 @@ import logo from './logo.png';
 import './App.css';
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
-import ProjectList from "./container/ProjectList/ProjectList"
+import ProjectList from "./container/ProjectList/ProjectList";
 import AddProject from "./components/addProject/AddProject";
 
 function App() {
