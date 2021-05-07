@@ -34,9 +34,9 @@
 .wrapper .wrapper_close{
     position: absolute;
     display: block;
-    right: 5px;
+    right: 15px;
     background: none;
-    top:5px;
+    top:15px;
     border: 0;
     height: 25px;
     width: 30px;
@@ -227,4 +227,18 @@ form .btn:hover .btn-layer{
   font-size: 20px;
   font-weight: 500;
   cursor: pointer;
+}
+@media (max-height:470px){
+  .wrapper{
+    position: absolute;
+    top:0;
+    transform:initial
+  }
+}
+@media (max-width:470px){
+  .wrapper{
+    position: absolute;
+    left:0;
+    transform:initial
+  }
 }
