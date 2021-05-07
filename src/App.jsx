@@ -1,13 +1,15 @@
 import logo from './logo.png';
 import './App.css';
 import Navbar from "./components/navbar/Navbar";
+import AddProject from "./components/addProject/AddProject";
 
 function App() {
   return (
     <div className="App">
       <Navbar/>
+      <AddProject/>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* <img src={logo} className="App-logo" alt="logo" />
         <p>
           Site en cours de construction.
         </p>
@@ -17,7 +19,7 @@ function App() {
           rel="author"
         >
           Suivez-nous
-        </a>
+        </a> */}
       </header>
     </div>
   );
