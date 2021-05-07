@@ -1,11 +1,7 @@
 :root{
-    --first:#79031d;
-    --second:#f5f7f7;
-    --accentuation:#edb518;
-    --bg:#00070cf3 ;
-
     --light-first:#8CBDB9;
     --light-second:#2D3E4E;
     --light-accentuation:#E09E50;
     --light-bg:#E8ECEB ;
+    --bg:#e8eceb62;
 } 

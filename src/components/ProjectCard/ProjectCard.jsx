@@ -1,6 +1,7 @@
 import React, {Fragment} from 'react';
 import './ProjectCard.css';
 import user from "../../images/user.jpg"
+
 function ProjectCard(props) {
 
     const {img_path, title, description, categories,picture} = props
@@ -11,7 +12,7 @@ function ProjectCard(props) {
             <div className="card-container">
                 <a href="#">
                     <header>
-                        <img className="Header" src={picture}/>
+                        <div className="Header" style={{backgroundImage: `url(`+picture+`)`, backgroundSize: "cover",}}/>
                     </header>
                     <div className="bodyCard">
                         <img className="round" src={user} alt="The image of the user"/>

@@ -29,4 +29,13 @@
         display: grid;
         grid-template-columns: 1fr;
     }
+
+    .card-container h2 {
+        font-size: 90% !important;
+    }
+    .card-container p {
+        font-size: 70% !important;
+    }
+
+    
 }
