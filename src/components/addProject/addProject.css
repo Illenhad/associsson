@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url(../../color.css);
+
+#container {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1em;
+    color: var(--light-accentuation);
+}
+
+form {
+    padding: 1%;
+    text-align: center;
+}
+
+.label {
+    color: var(--light-first);
+    padding-right: 1%;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.info-unit {
+    padding-bottom: 1%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.button {
+    background-color: var(--light-accentuation);
+    color:#fff;
+    border: none;
+    padding: 0.5%;
+    font-size: 1.2em;
+    font-weight: 550;
+}
