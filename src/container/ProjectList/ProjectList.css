@@ -1,9 +1,32 @@
 
-.grid-4 > * {
-
-	display: block; 
-    display: inline-block;
-    letter-spacing: normal;
-    text-rendering: auto;
+.col-4{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
+.card-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 1500px) {
+    .col-3{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 1200px) {
+    .col-2{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .col-1{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
