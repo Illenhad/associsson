@@ -1,0 +1,125 @@
+nav {
+    height: 50px;
+    background-color: var(--light-first);
+}
+
+.navbar {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.navbar-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.navbar-items {
+    visibility: hidden;
+    opacity: 0;
+    padding: 0 10px;
+    list-style: none;
+    text-align: center;
+    transition: .2s opacity ease-in-out;
+}
+
+.navbar-items a {
+    text-decoration: none;
+    color: var(--light-bg);
+}
+
+.active > .navbar-items {
+    visibility: visible;
+    opacity: 1;
+}
+
+.navbar-btn {
+    display: none;
+    cursor: pointer;
+}
+
+/* Button burger animation */
+.btn-row {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    height: 10px;
+    margin: 6px 0;
+    transition: .4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.btn-row:nth-child(1) {
+    width: 50%;
+}
+
+.btn-row:nth-child(2) {
+    width: 100%;
+    margin: 4px 0;
+}
+
+.btn-row:nth-child(3) {
+    width: 75%;
+}
+
+.active > .btn-row:nth-child(1) {
+    transform-origin: bottom;
+    transform: rotatez(45deg) translate(6px, 3px)
+}
+
+.active > .btn-row:nth-child(2) {
+    transform-origin: top;
+    transform: rotatez(-45deg)
+}
+
+.active > .btn-row:nth-child(3) {
+    transform-origin: bottom;
+    width: 50%;
+    transform: translate(18px, -10px) rotatez(45deg);
+}
+
+/* END Button burger animation */
+
+@media screen and (max-width: 500px) {
+    .navbar-btn {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 50px;
+        width: 50px;
+        line-height: 50px;
+        padding-right: 10px;
+        background: transparent;
+        color: #f1f1f1;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    .navbar {
+        flex-direction: column;
+        height: 200px;
+    }
+
+    .navbar-items {
+        height: 50px;
+        width: 100%;
+        padding: 0;
+        line-height: 50px;
+        border-bottom: 1px solid #f1f1f1;
+        background-color: var(--light-first);
+        z-index: 999;
+    }
+
+    .navbar-items:nth-child(1) {
+        margin-top: 50px;
+        border-top: 1px solid #f1f1f1;
+    }
+}
+
