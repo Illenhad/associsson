@@ -1,11 +1,16 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
 import './Navbar.css';
+import LogiquePopup from '../PopupLogin_SignUp/LogiquePopup.js';
+import Popup from '../PopupLogin_SignUp/Popup.js';
+
 
 function Navbar() {
 
     const [toggleMenu, setToggleMenu] = useState(false);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    const {revele,toggle} = LogiquePopup();   
 
     const toggleMenuSmallScreen = () => {
         setToggleMenu(!toggleMenu);
@@ -37,8 +42,9 @@ function Navbar() {
                 <li className="navbar-items">
                     <Link to="/projects">Projets</Link>
                 </li>
-                <li className="navbar-items">
-                    <Link to="/login">Connexion</Link>
+                <li className="navbar-items"
+                    onClick={toggle}>
+                    <a onClick={toggle}>Connexion/Inscription</a>
                 </li>
             </ul>
             <button onClick={toggleMenuSmallScreen} className={(toggleMenu || windowWidth > 500) ? "navbar-btn active" : "navbar-btn"}>
@@ -46,6 +52,10 @@ function Navbar() {
                 <div className="btn-row"/>
                 <div className="btn-row"/>
             </button>
+            <Popup
+          revele={revele}
+          cache={toggle}
+        />
         </nav>
     );
 }
