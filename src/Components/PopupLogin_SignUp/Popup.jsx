@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import './Popup.css'
-import InnerPopup from './InnerPopup.js'
+import InnerPopup from './InnerPopup.jsx'
 
 const Popup =  ({revele,cache,type}) => revele ? (
         <Fragment>

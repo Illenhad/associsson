@@ -1,3 +1,5 @@
+
+@import url(../../color.css);
 nav {
     height: 50px;
     background-color: var(--light-first);
@@ -39,6 +41,7 @@ nav {
     transition: .2s opacity ease-in-out;
     text-decoration: none;
     color: var(--light-bg);
+    cursor: pointer;
 }
 
 .active > .navbar-items {
