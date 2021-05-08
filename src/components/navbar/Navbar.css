@@ -1,6 +1,6 @@
 nav {
     height: 50px;
-    background-image: linear-gradient(135deg, #920520 10%, #ec022b 100%);
+    background-color: var(--light-first);
 }
 
 .navbar {
@@ -26,6 +26,7 @@ nav {
     list-style: none;
     cursor: pointer;
     color: #f1f1f1;
+    text-align: center;
     transition: .2s opacity ease-in-out;
 }
 
@@ -54,6 +55,7 @@ nav {
 
 .btn-row:nth-child(2) {
     width: 100%;
+    margin: 4px 0;
 }
 
 .btn-row:nth-child(3) {
@@ -73,7 +75,7 @@ nav {
 .active > .btn-row:nth-child(3) {
     transform-origin: bottom;
     width: 50%;
-    transform: translate(14px, -11px) rotatez(45deg);
+    transform: translate(16px, -10px) rotatez(45deg);
 }
 
 /* END Button burger animation */
@@ -107,7 +109,8 @@ nav {
         padding: 0;
         line-height: 50px;
         border-bottom: 1px solid #f1f1f1;
-        background-image: linear-gradient(135deg, #920520 10%, #ec022b 100%);
+        background-color: var(--light-first);
+        z-index: 999;
     }
 
     .navbar-items:nth-child(1) {

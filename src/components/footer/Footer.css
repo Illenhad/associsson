@@ -1,4 +1,9 @@
-footer {
+footer{
+    background-color: var(--light-second);
+    color: var(--light-bg);
+}
+
+.footer-container{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -25,6 +30,7 @@ footer {
 .footer-section {
     margin: 0;
     padding: 0;
+    justify-content: left;
 }
 
 .footer-section li {
@@ -37,12 +43,12 @@ footer {
 
 .footer-social > a {
     padding: 0 3px;
-    color: #333;
+    color: var(--light-bg);
     cursor: pointer;
 }
 
 @media screen and (min-width: 581px) {
-    footer {
+    .footer-container{
         height: 100px;
         flex-direction: row;
         max-width: 580px;
@@ -51,7 +57,7 @@ footer {
 }
 
 @media screen and (min-width: 768px) {
-    footer {
+    .footer-container{
         max-width: 720px;
     }
 }

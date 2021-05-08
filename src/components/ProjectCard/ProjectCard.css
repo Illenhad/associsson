@@ -19,7 +19,7 @@
 .card-container:hover {
     position: relative;
     bottom: 5px;
-    box-shadow: 0 12px 10px 0 rgba(0, 0, 0, 0.);
+    box-shadow: 0 12px 10px 0 rgba(0, 0, 0, .4);
 }
 
 .card-container .bodyCard {
