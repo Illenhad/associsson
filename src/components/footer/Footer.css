@@ -37,6 +37,11 @@ footer {
     list-style: none;
 }
 
+.footer-section li a {
+    text-decoration: none;
+    color: var(--light-bg);
+}
+
 .footer-social {
     display: flex;
     justify-content: center;

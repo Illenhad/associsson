@@ -17,6 +17,7 @@ nav {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 999;
 }
 
 .navbar-items {
@@ -24,10 +25,13 @@ nav {
     opacity: 0;
     padding: 0 10px;
     list-style: none;
-    cursor: pointer;
-    color: #f1f1f1;
     text-align: center;
     transition: .2s opacity ease-in-out;
+}
+
+.navbar-items a {
+    text-decoration: none;
+    color: var(--light-bg);
 }
 
 .active > .navbar-items {
@@ -64,7 +68,7 @@ nav {
 
 .active > .btn-row:nth-child(1) {
     transform-origin: bottom;
-    transform: rotatez(45deg) translate(8px, 5px)
+    transform: rotatez(45deg) translate(6px, 3px)
 }
 
 .active > .btn-row:nth-child(2) {
@@ -75,7 +79,7 @@ nav {
 .active > .btn-row:nth-child(3) {
     transform-origin: bottom;
     width: 50%;
-    transform: translate(16px, -10px) rotatez(45deg);
+    transform: translate(18px, -10px) rotatez(45deg);
 }
 
 /* END Button burger animation */

@@ -1,18 +1,20 @@
-import './App.css';
+import { BrowserRouter as Router } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
-import ProjectList from "./container/ProjectList/ProjectList"
+import Routes from "./services/Routes";
+import './App.css';
 
 function App() {
     return (
-        <div className="App">
-            <Navbar/>
-            <header className="App-header">
-                <ProjectList/>
-            </header>
-
-            <Footer/>
-        </div>
+        <Router>
+            <div className="App">
+                <Navbar/>
+                <header className="App-header">
+                    <Routes/>
+                </header>
+                <Footer/>
+            </div>
+        </Router>
     );
 }
 

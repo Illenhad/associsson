@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faDiscord, faGithub} from '@fortawesome/free-brands-svg-icons'
 import "./Footer.css";
@@ -15,14 +16,20 @@ function Footer() {
                     <p className="app-version">Version {pjson.version}</p>
                 </div>
                 <ul className="footer-section">
-                    <li>Accueil</li>
-                    <li>Liste des projets</li>
-                    <li>Se connecter</li>
+                    <li>
+                        <Link to="/">Accueil</Link>
+                    </li>
+                    <li>
+                        <Link to="/projects">Liste des projets</Link>
+                    </li>
+                    <li>
+                        <Link to="/login">Se connecter</Link>
+                    </li>
                 </ul>
                 <ul className="footer-section">
-                    <li>Mentions Légales</li>
-                    <li>Protections des données</li>
-                    <li>Nous contacter</li>
+                    <li><Link to="/legal">Mentions Légales</Link></li>
+                    <li><Link to="/protection-data">Protections des données</Link></li>
+                    <li><Link to="/contact">Nous contacter</Link></li>
                 </ul>
                 <div className="footer-section footer-social">
                     <a href="https://discord.gg/5Fgy6kSe">

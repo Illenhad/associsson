@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import { Link } from "react-router-dom";
 import './Navbar.css';
 
 function Navbar() {
@@ -26,11 +27,19 @@ function Navbar() {
 
     return (
         <nav>
-            <img className="navbar-logo" alt="Logo" src={process.env.PUBLIC_URL + "images/meta/favicon.ico"}/>
+            <Link to="/">
+                <img className="navbar-logo" alt="Logo" src={process.env.PUBLIC_URL + "images/meta/favicon.ico"}/>
+            </Link>
             <ul className={(toggleMenu || windowWidth > 500) ? "navbar active" : "navbar"}>
-                <li className="navbar-items">Page 1</li>
-                <li className="navbar-items">Page 2</li>
-                <li className="navbar-items">Page 3</li>
+                <li className="navbar-items">
+                    <Link to="/">Accueil</Link>
+                </li>
+                <li className="navbar-items">
+                    <Link to="/projects">Projets</Link>
+                </li>
+                <li className="navbar-items">
+                    <Link to="/login">Connexion</Link>
+                </li>
             </ul>
             <button onClick={toggleMenuSmallScreen} className={(toggleMenu || windowWidth > 500) ? "navbar-btn active" : "navbar-btn"}>
                 <div className="btn-row"/>
