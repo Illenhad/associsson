@@ -1,7 +1,7 @@
 import logo from './logo.png';
 import './App.css';
-import LogiquePopup from './Components/PopupLogin_SignUp/LogiquePopup.js'
-import Popup from './Components/PopupLogin_SignUp/Popup.js'
+import LogiquePopup from './Components/PopupLogin_SignUp/LogiquePopup'
+import Popup from './Components/PopupLogin_SignUp/Popup'
 
 function App() {
   const {revele,toggle} = LogiquePopup();

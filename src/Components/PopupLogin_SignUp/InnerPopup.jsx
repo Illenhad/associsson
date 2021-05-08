@@ -6,6 +6,8 @@ export default class InnerPopup extends Component {
         password:"",
         confirm:"",
         type:"asso",
+        errorLogin:"",
+        errorSignUp:"Ceci est une erreur"
     }
 
     onChange=(event)=>{ 
@@ -83,6 +85,7 @@ export default class InnerPopup extends Component {
                         <div className="pass-link">
                             <a href="#">Mot de passe oublié?</a>
                         </div>
+                        {this.state.errorLogin!="" ? <div className="error">{this.state.errorLogin}</div> : null}
                         <div className="field btn">
                             <div className="btn-layer">
                             </div>
@@ -133,6 +136,7 @@ export default class InnerPopup extends Component {
                             <div className="slider-tab">
                             </div>
                         </div>
+                        {this.state.errorSignUp!="" ? <div className="error">{this.state.errorSignUp}</div> : null}
                         <div className="field btn">
                             <div className="btn-layer">
                             </div>      
