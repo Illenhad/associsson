@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
 import './Navbar.css';
-import LogiquePopup from '../PopupLogin_SignUp/LogiquePopup.js';
-import Popup from '../PopupLogin_SignUp/Popup.js';
+import LogiquePopup from '../PopupLogin_SignUp/LogiquePopup';
+import Popup from '../PopupLogin_SignUp/Popup';
 
 
 function Navbar() {
