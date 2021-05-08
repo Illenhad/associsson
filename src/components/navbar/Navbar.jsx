@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import './Navbar.css';
 
 function Navbar() {
@@ -10,6 +10,8 @@ function Navbar() {
     const toggleMenuSmallScreen = () => {
         setToggleMenu(!toggleMenu);
     }
+
+    let location = useLocation();
 
     useEffect(() => {
         const changeWidth = () => {
@@ -35,13 +37,13 @@ function Navbar() {
                     className={(toggleMenu || windowWidth > 500) ? "navbar active" : "navbar"}
                     onClick={toggleMenuSmallScreen}>
                     <Link to="/" className="navbar-items">
-                        <li>Accueil</li>
+                        <li className={location.pathname === "/" ? "selected" : ""}>Accueil</li>
                     </Link>
                     <Link to="/projects" className="navbar-items">
-                        <li>Projets</li>
+                        <li className={location.pathname === "/projects" ? "selected" : ""}>Projets</li>
                     </Link>
                     <Link to="/login" className="navbar-items">
-                        <li>Connexion</li>
+                        <li className={location.pathname === "/login" ? "selected" : ""}>Connexion</li>
                     </Link>
                 </ul>
                 <button onClick={toggleMenuSmallScreen}

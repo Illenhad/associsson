@@ -46,6 +46,10 @@ nav {
     opacity: 1;
 }
 
+.selected {
+    font-weight: bold;
+}
+
 .navbar-btn {
     display: none;
     cursor: pointer;
