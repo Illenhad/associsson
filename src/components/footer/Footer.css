@@ -1,9 +1,9 @@
-footer{
+footer {
     background-color: var(--light-second);
     color: var(--light-bg);
 }
 
-.footer-container{
+.footer-container {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -30,7 +30,7 @@ footer{
 .footer-section {
     margin: 0;
     padding: 0;
-    justify-content: left;
+    width: 200px;
 }
 
 .footer-section li {
@@ -39,6 +39,7 @@ footer{
 
 .footer-social {
     display: flex;
+    justify-content: center;
 }
 
 .footer-social > a {
@@ -48,7 +49,11 @@ footer{
 }
 
 @media screen and (min-width: 581px) {
-    .footer-container{
+    .footer-section {
+        width: auto;
+    }
+
+    .footer-container {
         height: 100px;
         flex-direction: row;
         max-width: 580px;
@@ -57,7 +62,7 @@ footer{
 }
 
 @media screen and (min-width: 768px) {
-    .footer-container{
+    .footer-container {
         max-width: 720px;
     }
 }

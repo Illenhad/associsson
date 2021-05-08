@@ -10,7 +10,7 @@ function Footer() {
     return (
         <footer>
             <div className="footer-container">
-                <div className="footer-info">
+                <div className="footer-section footer-info">
                     <img className="footer-logo" alt="Logo" src={process.env.PUBLIC_URL + "images/meta/favicon.ico"}/>
                     <p className="app-version">Version {pjson.version}</p>
                 </div>
