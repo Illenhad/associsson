@@ -93,7 +93,7 @@
 .slide-controls label.signup,
 .slide-controls label.login,
 .slide-controls label.asso,
-.slide-controls label.volontaire{
+.slide-controls label.volon{
   color: var(--light-bg);
 }
 
@@ -126,7 +126,7 @@ input[type="radio"]{
   color: #fff;
 }
 
-#volontaire:checked ~ .slider-tab{
+#volon:checked ~ .slider-tab{
     left: 50%;
   }
 #asso:checked ~ label.asso{
@@ -134,7 +134,7 @@ input[type="radio"]{
     cursor: default;
     user-select: none;
   }
-#volontaire:checked ~ label.volontaire{
+#volon:checked ~ label.volon{
     cursor: default;
     user-select: none;
     color: #fff;

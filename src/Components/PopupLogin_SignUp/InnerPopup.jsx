@@ -5,14 +5,31 @@ export default class InnerPopup extends Component {
         mail:"",
         password:"",
         confirm:"",
+        name:"",
+        firstname:"",
+        tel:"",
+        file:null,
+        adresse:"",
+        codePostal:"",
+        ville:"",
+        region:"",
+        pays:"",
         type:"asso",
         errorLogin:"",
-        errorSignUp:""
+        errorSignUp:"",
+        errorInfoAsso:"",
+        errorInfoVolon:"",
+        errorContact:"",
     }
 
-    checkEmail=(email)=> {
+    checkEmail=(email)=>{
         var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(email);
+    }
+
+    checkTel=(tel)=>{
+        var re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+        return re.test(tel);
     }
 
     onChange=(event)=>{ 
@@ -62,8 +79,33 @@ export default class InnerPopup extends Component {
         " Confirm : "+this.state.confirm+" Type : "+this.state.type)
         document.querySelector("form.login").style.marginLeft = "-50%";
         document.querySelector(".title-text .login").style.marginLeft = "-50%"
+        document.querySelector(".slide-controls").style.display = "none"
     }
-    
+
+    infoAsso=(event)=>{
+        event.preventDefault();
+        this.setState({errorInfoAsso:""})
+        if (!this.checkTel(this.state.tel)){
+            this.setState({errorInfoAsso:"Veuillez saisir un numéro de téléphone valide"})
+            return;
+        }
+        document.querySelector("form.login").style.marginLeft = "-75%";
+        document.querySelector(".title-text .login").style.marginLeft = "-75%"
+    }
+
+    infoVolon=(event)=>{
+        event.preventDefault();
+        this.setState({errorInfoVolon:""})
+        if (!this.checkTel(this.state.tel)){
+            this.setState({errorInfoVolon:"Veuillez saisir un numéro de téléphone valide"})
+            return;
+        }
+        document.querySelector("form.login").style.marginLeft = "-75%";
+        document.querySelector(".title-text .login").style.marginLeft = "-75%"
+    }
+
+
+
     SwaptoLogin=()=>{
         this.setState({password:""});
         document.querySelector("form.login").style.marginLeft = "0%";
@@ -72,6 +114,7 @@ export default class InnerPopup extends Component {
     }
     SwaptoSignUp=()=>{
         this.setState({password:""});
+        this.setState({confirm:""});
         document.querySelector("form.login").style.marginLeft = "-25%";
         document.querySelector(".title-text .login").style.marginLeft = "-25%";
     }
@@ -168,10 +211,10 @@ export default class InnerPopup extends Component {
                             <input 
                                 type="radio" 
                                 name="slideCount" 
-                                id="volontaire"
+                                id="volon"
                                 />
                             <label htmlFor="asso" className="slideCount asso" onClick={this.changeType}>Association</label>
-                            <label htmlFor="volontaire" className="slideCount volontaire" onClick={this.changeType}>Volontaire</label>
+                            <label htmlFor="volon" className="slideCount volon" onClick={this.changeType}>Volontaire</label>
                             <div className="slider-tab">
                             </div>
                         </div>
@@ -209,7 +252,7 @@ export default class InnerPopup extends Component {
                                 name="file"
                                 onChange={this.onChange}
                                 value={this.state.file}
-                                required/>
+                                />
                         </div>
                     
                         {this.state.errorInfoAsso!="" ? <div className="error">{this.state.errorInfoAsso}</div> : null}
@@ -255,14 +298,14 @@ export default class InnerPopup extends Component {
                                 name="file"
                                 onChange={this.onChange}
                                 value={this.state.file}
-                                required/>
+                                />
                         </div>
                         
                         {this.state.errorInfoVolon!="" ? <div className="error">{this.state.errorInfoVolon}</div> : null}
                         <div className="field btn">
                             <div className="btn-layer">
                             </div>      
-                            <button className="submit"> S'inscrire</button>
+                            <button className="submit"> Continuer</button>
                         </div>
                     </form>
                     }
