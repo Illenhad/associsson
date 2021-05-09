@@ -7,7 +7,12 @@ export default class InnerPopup extends Component {
         confirm:"",
         type:"asso",
         errorLogin:"",
-        errorSignUp:"Ceci est une erreur"
+        errorSignUp:""
+    }
+
+    checkEmail=(email)=> {
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
     }
 
     onChange=(event)=>{ 
@@ -23,22 +28,48 @@ export default class InnerPopup extends Component {
 
     login=(event)=>{
         event.preventDefault();
+        this.setState({errorLogin:""})
+        if (!this.checkEmail(this.state.mail)){
+            this.setState({errorLogin:"Veuillez saisir une adresse mail valide"});
+            return
+        }
+        if (this.state.password===""){
+            this.setState({errorLogin:"Veuillez saisir votre mot de passe"});
+            return
+        }
+        
+        
         console.log("Login : Mail :"+this.state.mail+" Password : "+this.state.password)
     }
     
     signup=(event)=>{
         event.preventDefault();
+        this.setState({errorSignUp:""})
+        if (!this.checkEmail(this.state.mail)){
+            this.setState({errorSignUp:"Veuillez saisir une adresse mail valide"});
+            return
+        }
+        if (this.state.password===""){
+            this.setState({errorSignUp:"Veuillez saisir un mot de passe"});
+            return
+        }
+        if (this.state.password!=this.state.confirm){
+            this.setState({errorSignUp:"Vous avez saisis deux mots de passe différents"});
+            return
+        }
         
         console.log("Signup : Mail :"+this.state.mail+" Password : "+this.state.password+
         " Confirm : "+this.state.confirm+" Type : "+this.state.type)
     }
     
     SwaptoLogin=()=>{
+        this.setState({password:""});
         document.querySelector("form.login").style.marginLeft = "0%";
         document.querySelector(".title-text .login").style.marginLeft = "0%"
         return
     }
     SwaptoSignUp=()=>{
+        this.setState({password:""});
         document.querySelector("form.login").style.marginLeft = "-50%";
         document.querySelector(".title-text .login").style.marginLeft = "-50%";
     }

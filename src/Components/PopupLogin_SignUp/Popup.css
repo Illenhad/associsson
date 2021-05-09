@@ -215,6 +215,15 @@ form .btn .btn-layer{
 form .btn:hover .btn-layer{
   left: 0;
 }
+.wrapper .error{
+  width: 100%;
+  background: var(--bg-error);
+  border: solid 1px var(--light-accentuation);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  animation: AppearError 0.1s linear;;
+}
 .submit{
   height: 100%;
   width: 100%;
@@ -243,3 +252,10 @@ form .btn:hover .btn-layer{
     transform:initial
   }
 }
+@keyframes AppearError {
+  0% {
+    height: 0%;
+    color: transparent;
+  }
+  100%{height: auto;
+  color: var(--light-accentuation);}}
