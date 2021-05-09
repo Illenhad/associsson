@@ -60,6 +60,8 @@ export default class InnerPopup extends Component {
         
         console.log("Signup : Mail :"+this.state.mail+" Password : "+this.state.password+
         " Confirm : "+this.state.confirm+" Type : "+this.state.type)
+        document.querySelector("form.login").style.marginLeft = "-50%";
+        document.querySelector(".title-text .login").style.marginLeft = "-50%"
     }
     
     SwaptoLogin=()=>{
@@ -70,8 +72,8 @@ export default class InnerPopup extends Component {
     }
     SwaptoSignUp=()=>{
         this.setState({password:""});
-        document.querySelector("form.login").style.marginLeft = "-50%";
-        document.querySelector(".title-text .login").style.marginLeft = "-50%";
+        document.querySelector("form.login").style.marginLeft = "-25%";
+        document.querySelector(".title-text .login").style.marginLeft = "-25%";
     }
     render() {
         return (
@@ -82,6 +84,12 @@ export default class InnerPopup extends Component {
                 </div>
                 <div className="title signup">  
                     S'inscrire
+                </div>
+                <div className="title">  
+                    S'inscrire
+                </div>
+                <div className="title">  
+                    Contact
                 </div>
             </div>
             <div className="form-container">
@@ -168,6 +176,143 @@ export default class InnerPopup extends Component {
                             </div>
                         </div>
                         {this.state.errorSignUp!="" ? <div className="error">{this.state.errorSignUp}</div> : null}
+                        <div className="field btn">
+                            <div className="btn-layer">
+                            </div>      
+                            <button className="submit"> S'inscrire</button>
+                        </div>
+                    </form>
+                    { this.state.errorLogin==="asso"?
+                    <form onSubmit={this.infoAsso} className="infoAsso">
+                        <div className="field">
+                            <input 
+                                type="text" 
+                                placeholder="Nom de l'association"
+                                name='name'
+                                onChange={this.onChange}
+                                value={this.state.name}
+                                required/>
+                        </div>
+                        <div className="field">
+                            <input 
+                                type="text" 
+                                placeholder="Numéro de téléphone" 
+                                name='tel'
+                                onChange={this.onChange}
+                                value={this.state.tel}
+                                required/>
+                        </div>
+                        <div className="field">
+                            <input 
+                                type="file" 
+                                placeholder="importer votre Logo" 
+                                name="file"
+                                onChange={this.onChange}
+                                value={this.state.file}
+                                required/>
+                        </div>
+                    
+                        {this.state.errorInfoAsso!="" ? <div className="error">{this.state.errorInfoAsso}</div> : null}
+                        <div className="field btn">
+                            <div className="btn-layer">
+                            </div>      
+                            <button className="submit"> Continuer</button>
+                        </div>
+                    </form>
+                    :
+                    <form onSubmit={this.infoVolon} className="infoVolon">
+                        <div className="field">
+                            <input 
+                                type="text" 
+                                placeholder="Nom"
+                                name='name'
+                                onChange={this.onChange}
+                                value={this.state.name}
+                                required/>
+                        </div>
+                        <div className="field">
+                            <input 
+                                type="text" 
+                                placeholder="Prénom"
+                                name='firstname'
+                                onChange={this.onChange}
+                                value={this.state.firstname}
+                                required/>
+                        </div>
+                        <div className="field">
+                            <input 
+                                type="text" 
+                                placeholder="Numéro de téléphone" 
+                                name='tel'
+                                onChange={this.onChange}
+                                value={this.state.tel}
+                                required/>
+                        </div>
+                        <div className="field">
+                            <input 
+                                type="file" 
+                                placeholder="importer un avatar" 
+                                name="file"
+                                onChange={this.onChange}
+                                value={this.state.file}
+                                required/>
+                        </div>
+                        
+                        {this.state.errorInfoVolon!="" ? <div className="error">{this.state.errorInfoVolon}</div> : null}
+                        <div className="field btn">
+                            <div className="btn-layer">
+                            </div>      
+                            <button className="submit"> S'inscrire</button>
+                        </div>
+                    </form>
+                    }
+                    <form onSubmit={this.contacts} className="contacts">
+                        <div className="field">
+                            <input 
+                                type="text" 
+                                placeholder="Adresse"
+                                name='adresse'
+                                onChange={this.onChange}
+                                value={this.state.adresse}
+                                required/>
+                        </div>
+                        <div className="field">
+                            <input 
+                                type="text" 
+                                placeholder="Code Postal" 
+                                name='codePostal'
+                                onChange={this.onChange}
+                                value={this.state.codePostal}
+                                required/>
+                        </div>
+                        <div className="field">
+                            <input 
+                                type="text" 
+                                placeholder="Ville" 
+                                name="ville"
+                                onChange={this.onChange}
+                                value={this.state.ville}
+                                required/>
+                        </div>
+                        <div className="field">
+                            <input 
+                                type="text" 
+                                placeholder="Région/Département" 
+                                name="region"
+                                onChange={this.onChange}
+                                value={this.state.region}
+                                required/>
+                        </div>
+                        <div className="field">
+                            <input 
+                                type="text" 
+                                placeholder="Pays" 
+                                name="pays"
+                                onChange={this.onChange}
+                                value={this.state.pays}
+                                required/>
+                        </div>
+                        {this.state.errorContact!="" ? <div className="error">{this.state.errorContact}</div> : null}
                         <div className="field btn">
                             <div className="btn-layer">
                             </div>      
