@@ -2,13 +2,14 @@
 @import url(../../color.css);
 
 #container {
-    margin-top: 1em;
     margin-bottom: 1em;
+    margin-top: 0.5em;
+    width: 100%;
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
     color: var(--light-accentuation);
 }
 
@@ -19,13 +20,13 @@ form {
 
 .label {
     color: var(--light-first);
-    padding-right: 1%;
+    padding-right: 2%;
     font-weight: 600;
     font-size: 1.2em;
 }
 
 .info-unit {
-    padding-bottom: 1%;
+    padding-bottom: 5%;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -35,7 +36,118 @@ form {
     background-color: var(--light-accentuation);
     color:#fff;
     border: none;
-    padding: 0.5%;
+    padding: 1%;
     font-size: 1.2em;
     font-weight: 550;
+    border-radius: 10px;
+    width: 30%;
+}
+
+.class-input {
+    border-color: var(--light-first);
+    font-size: 1em;
+    border-radius: 10px;
+    min-height: 45px;
+    width: 100%;
+}
+
+.input-container {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.name-and-category {
+    display: flex;
+    justify-content: space-around;
+}
+
+.unit-name {
+    flex: 1.1;
+}
+
+.unit-category {
+    flex: 0.9;
+    margin-left: 5%;
+}
+
+.input-description {
+    min-height: 200px;
+}
+
+/*Responsive mobile*/
+@media screen and (max-width: 450px) {
+
+    .class-input {
+        border-radius: 7px;
+    }
+
+    .input-name, .select-category {
+        min-height: 30px;
+    }
+
+    .button {
+        border-radius: 7px;
+        width: 90%;
+        margin-top: 5%;
+        padding: 3%;
+    }
+
+    .info-unit {
+        flex-direction: column;
+    }
+
+    .input-description {
+        min-height: 200px;
+    }
+    
+}
+
+/*Responsive tablette*/
+@media screen and (max-width: 1200px) {
+
+    .name-and-category {
+        flex-direction: column;
+    }
+
+    .input-container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .unit-category {
+        margin-left: 0;
+    }
+    
+    .class-input {
+        border-radius: 10px;
+        width: 100%;
+    }
+
+    .label {
+        padding-right: 3%;
+    }
+
+    .input-name, .select-category {
+        min-height: 40px;
+    }
+
+    .unit-description {
+        flex-direction: column;
+    }
+
+    .info-unit {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .button {
+        width: 60%;
+        margin-top: 3%;
+        padding: 2%;
+    }
+
+    .input-description {
+        min-height: 250px;
+    }
+
 }

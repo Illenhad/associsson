@@ -51,20 +51,20 @@ export default class AddProject extends Component {
             <div id="container">
                 <h1>Nouveau projet</h1>
                 <form onSubmit={this.onSubmit}>
-
-                    <div>
-                        <div class="info-unit">
+                    <div class="name-and-category input-container">
+                        <div class="info-unit unit-name">
                             <label class="label" for="name">Nom</label>
-                            <input 
+                            <input class="input-name class-input"
                                 type="text" 
                                 name="name" 
                                 onChange={this.onChange}
                                 value={this.state.nom}
                             />
                         </div>
-                        <div class="info-unit">
+                        <div class="info-unit unit-category">
                             <label class="label" for="category">Catégorie</label>
                             <select 
+                                class="class-input select-category"
                                 name="category"
                                 onChange={this.onChange}
                                 value={this.state.nom}
@@ -77,9 +77,10 @@ export default class AddProject extends Component {
                             </select>
                         </div>
                     </div>
-                    <div class="info-unit">
+                    <div class="info-unit unit-description input-container">
                         <label class="label" for="description">Description</label>
                         <textarea 
+                            class="class-input input-description"
                             name="description" 
                             rows="5"
                             onChange={this.onChange}
