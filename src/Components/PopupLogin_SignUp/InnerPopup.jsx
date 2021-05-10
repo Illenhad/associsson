@@ -37,6 +37,11 @@ export default class InnerPopup extends Component {
             [event.target.name]:event.target.value
         })
     }
+    changeFile=(event)=>{
+        this.setState({
+            file: URL.createObjectURL(event.target.files[0])
+        })
+    }
     changeType=(event)=>{ 
         this.setState({
             type:event.target.htmlFor
@@ -225,89 +230,99 @@ export default class InnerPopup extends Component {
                             <button className="submit"> S'inscrire</button>
                         </div>
                     </form>
-                    { this.state.errorLogin==="asso"?
-                    <form onSubmit={this.infoAsso} className="infoAsso">
-                        <div className="field">
-                            <input 
-                                type="text" 
-                                placeholder="Nom de l'association"
-                                name='name'
-                                onChange={this.onChange}
-                                value={this.state.name}
-                                required/>
-                        </div>
-                        <div className="field">
-                            <input 
-                                type="text" 
-                                placeholder="Numéro de téléphone" 
-                                name='tel'
-                                onChange={this.onChange}
-                                value={this.state.tel}
-                                required/>
-                        </div>
-                        <div className="field">
-                            <input 
-                                type="file" 
-                                placeholder="importer votre Logo" 
-                                name="file"
-                                onChange={this.onChange}
-                                value={this.state.file}
-                                />
-                        </div>
-                    
-                        {this.state.errorInfoAsso!="" ? <div className="error">{this.state.errorInfoAsso}</div> : null}
-                        <div className="field btn">
-                            <div className="btn-layer">
-                            </div>      
-                            <button className="submit"> Continuer</button>
-                        </div>
-                    </form>
-                    :
-                    <form onSubmit={this.infoVolon} className="infoVolon">
-                        <div className="field">
-                            <input 
-                                type="text" 
-                                placeholder="Nom"
-                                name='name'
-                                onChange={this.onChange}
-                                value={this.state.name}
-                                required/>
-                        </div>
-                        <div className="field">
-                            <input 
-                                type="text" 
-                                placeholder="Prénom"
-                                name='firstname'
-                                onChange={this.onChange}
-                                value={this.state.firstname}
-                                required/>
-                        </div>
-                        <div className="field">
-                            <input 
-                                type="text" 
-                                placeholder="Numéro de téléphone" 
-                                name='tel'
-                                onChange={this.onChange}
-                                value={this.state.tel}
-                                required/>
-                        </div>
-                        <div className="field">
-                            <input 
-                                type="file" 
-                                placeholder="importer un avatar" 
-                                name="file"
-                                onChange={this.onChange}
-                                value={this.state.file}
-                                />
-                        </div>
+                    { this.state.type==="asso" ?
+                        <form onSubmit={this.infoAsso} className="infoAsso">
+                            <div className="field">
+                                <input 
+                                    type="text" 
+                                    placeholder="Nom de l'association"
+                                    name='name'
+                                    onChange={this.onChange}
+                                    value={this.state.name}
+                                    required/>
+                            </div>
+                            <div className="field">
+                                <input 
+                                    type="text" 
+                                    placeholder="Numéro de téléphone" 
+                                    name='tel'
+                                    onChange={this.onChange}
+                                    value={this.state.tel}
+                                    required/>
+                            </div>
+                            <div className="profil_picture">
+                                <img src={this.state.file ?
+                                    this.state.file
+                                    :"./images/profil/empty-profil.svg"}/>
+                                <div className="field upload-container">
+                                    <input 
+                                        type="file" 
+                                        name="file"
+                                        onChange={this.changeFile}
+                                        accept="image/png, image/jpeg"
+                                        />
+                                    <button className="upload-btn">Importer votre Logo</button>
+                                </div>
+                            </div>
                         
-                        {this.state.errorInfoVolon!="" ? <div className="error">{this.state.errorInfoVolon}</div> : null}
-                        <div className="field btn">
-                            <div className="btn-layer">
-                            </div>      
-                            <button className="submit"> Continuer</button>
-                        </div>
-                    </form>
+                            {this.state.errorInfoAsso!="" ? <div className="error">{this.state.errorInfoAsso}</div> : null}
+                            <div className="field btn">
+                                <div className="btn-layer">
+                                </div>      
+                                <button className="submit"> Continuer</button>
+                            </div>
+                        </form>
+                    :
+                        <form onSubmit={this.infoVolon} className="infoVolon">
+                            <div className="field">
+                                <input 
+                                    type="text" 
+                                    placeholder="Nom"
+                                    name='name'
+                                    onChange={this.onChange}
+                                    value={this.state.name}
+                                    required/>
+                            </div>
+                            <div className="field">
+                                <input 
+                                    type="text" 
+                                    placeholder="Prénom"
+                                    name='firstname'
+                                    onChange={this.onChange}
+                                    value={this.state.firstname}
+                                    required/>
+                            </div>
+                            <div className="field">
+                                <input 
+                                    type="text" 
+                                    placeholder="Numéro de téléphone" 
+                                    name='tel'
+                                    onChange={this.onChange}
+                                    value={this.state.tel}
+                                    required/>
+                            </div>
+                            <div className="profil_picture">
+                                <img src={this.state.file ?
+                                    this.state.file
+                                    :"./images/profil/empty-profil.svg"}/>
+                                <div className="field upload-container">
+                                    <input 
+                                        type="file" 
+                                        name="file"
+                                        onChange={this.changeFile}
+                                        accept="image/png, image/jpeg"
+                                        />
+                                    <button className="upload-btn">Importer votre Logo</button>
+                                </div>
+                            </div>
+                            
+                            {this.state.errorInfoVolon!="" ? <div className="error">{this.state.errorInfoVolon}</div> : null}
+                            <div className="field btn">
+                                <div className="btn-layer">
+                                </div>      
+                                <button className="submit"> Continuer</button>
+                            </div>
+                        </form>
                     }
                     <form onSubmit={this.contacts} className="contacts">
                         <div className="field">
