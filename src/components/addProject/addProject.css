@@ -31,7 +31,6 @@ form {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    border:solid;
 }
 
 .button {
