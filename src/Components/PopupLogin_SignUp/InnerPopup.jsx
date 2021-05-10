@@ -37,6 +37,11 @@ export default class InnerPopup extends Component {
             [event.target.name]:event.target.value
         })
     }
+    changeFile=(event)=>{
+        this.setState({
+            file: URL.createObjectURL(event.target.files[0])
+        })
+    }
     changeType=(event)=>{ 
         this.setState({
             type:event.target.htmlFor
@@ -246,13 +251,14 @@ export default class InnerPopup extends Component {
                                     required/>
                             </div>
                             <div className="profil_picture">
-                                <img src="./images/profil/empty-profil.svg"/>
+                                <img src={this.state.file ?
+                                    this.state.file
+                                    :"./images/profil/empty-profil.svg"}/>
                                 <div className="field upload-container">
                                     <input 
                                         type="file" 
                                         name="file"
-                                        onChange={this.onChange}
-                                        value={this.state.file}
+                                        onChange={this.changeFile}
                                         accept="image/png, image/jpeg"
                                         />
                                     <button className="upload-btn">Importer votre Logo</button>
@@ -296,13 +302,14 @@ export default class InnerPopup extends Component {
                                     required/>
                             </div>
                             <div className="profil_picture">
-                                <img src="./images/profil/empty-profil.svg"/>
+                                <img src={this.state.file ?
+                                    this.state.file
+                                    :"./images/profil/empty-profil.svg"}/>
                                 <div className="field upload-container">
                                     <input 
                                         type="file" 
                                         name="file"
-                                        onChange={this.onChange}
-                                        value={this.state.file}
+                                        onChange={this.changeFile}
                                         accept="image/png, image/jpeg"
                                         />
                                     <button className="upload-btn">Importer votre Logo</button>
