@@ -31,6 +31,7 @@ form {
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    border:solid;
 }
 
 .button {
@@ -77,37 +78,6 @@ form {
 
 .input-description {
     min-height: 200px;
-}
-
-/*Responsive mobile*/
-@media screen and (max-width: 450px) {
-
-    h1 {
-        font-size: 1.5em
-    }
-
-    .label {
-        font-size: 1em;
-    }
-
-    .input-name, .select-category {
-        min-height: 30px;
-    }
-
-    .button {
-        width: 90%;
-        margin-top: 5%;
-        padding: 3%;
-    }
-
-    .info-unit {
-        flex-direction: column;
-    }
-
-    .input-description {
-        min-height: 200px;
-    }
-    
 }
 
 /*Responsive tablette*/
@@ -159,5 +129,38 @@ form {
     .input-description {
         min-height: 250px;
     }
+
+/*Responsive mobile*/
+@media screen and (max-width: 450px) {
+
+    h1 {
+        font-size: 1.5em
+    }
+
+    .label {
+        font-size: 1em;
+    }
+
+    .input-name, .select-category {
+        min-height: 30px;
+    }
+
+    .button {
+        width: 90%;
+        margin-top: 5%;
+        padding: 3%;
+    }
+
+    .info-unit {
+        padding-left: 5%;
+        padding-right: 5%;
+        flex-direction: column;
+    }
+
+    .input-description {
+        min-height: 200px;
+    }
+    
+}
 
 }
