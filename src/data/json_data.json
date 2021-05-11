@@ -6,63 +6,99 @@
     "address": "962 Chester Avenue, Bonanza, District Of Columbia, 2010",
     "about": "Lorem nisi enim ea aliquip Lorem eu fugiat sit deserunt. Ullamco fugiat tempor non magna elit veniam elit ullamco cupidatat aliquip adipisicing dolore. Officia anim excepteur nulla mollit. Elit sint incididunt nulla officia non. Magna nisi fugiat nisi irure ut incididunt do dolor reprehenderit ut ex ullamco. Duis eiusmod velit aute consequat amet ad et. Officia veniam sit enim labore enim magna irure eu sunt.\r\n",
     "title": "Déployer une application Django sur PythonAnywhere",
-    "categories": [
-      "Wordpress"
-    ]
+    "categories": [{
+      "id":"1",
+      "labelle":"Wordpress"
+    }]
   },
   {
-    "_id": "6091abf8b6ad1d8f6249a002",
+    "_id": "6091abf8b6ad1d8f6249a005",
     "picture": "https://www.cheercrank.com/wp-content/uploads/2019/04/awesome-pastel-colored-food-recipes-1.jpg",
     "name": "Burt Black",
     "address": "962 Chester Avenue, Bonanza, District Of Columbia, 2010",
     "about": "Lorem nisi enim ea aliquip Lorem eu fugiat sit deserunt. Ullamco fugiat tempor non magna elit veniam elit ullamco cupidatat aliquip adipisicing dolore. Officia anim excepteur nulla mollit. Elit sint incididunt nulla officia non. Magna nisi fugiat nisi irure ut incididunt do dolor reprehenderit ut ex ullamco. Duis eiusmod velit aute consequat amet ad et. Officia veniam sit enim labore enim magna irure eu sunt.\r\n",
     "title": "Déployer une application Django sur PythonAnywhere",
-    "categories": [
-      "Wordpress"
-    ]
+    "categories": [{
+      "id":"1",
+      "labelle":"Wordpress"
+    }]
   },
   {
-    "_id": "6091abf8b6ad1d8f6249a002",
+    "_id": "6091abf8b6ad1d8f6249a009",
+    "picture": "https://tse1.mm.bing.net/th?id=OIP.APSvjvu7iBrjuFeCOnOurAHaE6&pid=Api",
+    "name": "Burt Black",
+    "address": "962 Chester Avenue, Bonanza, District Of Columbia, 2010",
+    "about": "Lorem nisi enim ea aliquip Lorem eu fugiat sit deserunt. Ullamco fugiat tempor non magna elit veniam elit ullamco cupidatat aliquip adipisicing dolore. Officia anim excepteur nulla mollit. Elit sint incididunt nulla officia non. Magna nisi fugiat nisi irure ut incididunt do dolor reprehenderit ut ex ullamco. Duis eiusmod velit aute consequat amet ad et. Officia veniam sit enim labore enim magna irure eu sunt.\r\n",
+    "title": "Déployer une application Django sur PythonAnywhere",
+    "categories": [{
+      "id":"1",
+      "labelle":"Wordpress"
+    }]
+  },
+  {
+    "_id": "6091abf8bfdssfs6265",
+    "picture": "https://tse1.mm.bing.net/th?id=OIP.APSvjvu7iBrjuFeCOnOurAHaE6&pid=Api",
+    "name": "Burt Black",
+    "address": "962 Chester Avenue, Bonanza, District Of Columbia, 2010",
+    "about": "Lorem nisi enim ea aliquip Lorem eu fugiat sit deserunt. Ullamco fugiat tempor non magna elit veniam elit ullamco cupidatat aliquip adipisicing dolore. Officia anim excepteur nulla mollit. Elit sint incididunt nulla officia non. Magna nisi fugiat nisi irure ut incididunt do dolor reprehenderit ut ex ullamco. Duis eiusmod velit aute consequat amet ad et. Officia veniam sit enim labore enim magna irure eu sunt.\r\n",
+    "title": "Déployer une application Django sur PythonAnywhere",
+    "categories": [{
+      "id":"1",
+      "labelle":"Wordpress"
+    }]
+  },
+  {
+    "_id": "6091abf8b6ad1d8f6249a08",
+    "picture": "https://tse1.mm.bing.net/th?id=OIP.APSvjvu7iBrjuFeCOnOurAHaE6&pid=Api",
+    "name": "Burt Black",
+    "address": "962 Chester Avenue, Bonanza, District Of Columbia, 2010",
+    "about": "Lorem nisi enim ea aliquip Lorem eu fugiat sit deserunt. Ullamco fugiat tempor non magna elit veniam elit ullamco cupidatat aliquip adipisicing dolore. Officia anim excepteur nulla mollit. Elit sint incididunt nulla officia non. Magna nisi fugiat nisi irure ut incididunt do dolor reprehenderit ut ex ullamco. Duis eiusmod velit aute consequat amet ad et. Officia veniam sit enim labore enim magna irure eu sunt.\r\n",
+    "title": "Déployer une application Django sur PythonAnywhere",
+    "categories": [{
+      "id":"1",
+      "labelle":"Wordpress"
+    }]
+  },
+  {
+    "_id": "6091abf8b6ad1d8f6249a074",
+    "picture": "https://tse1.mm.bing.net/th?id=OIP.APSvjvu7iBrjuFeCOnOurAHaE6&pid=Api",
+    "name": "Burt Black",
+    "address": "962 Chester Avenue, Bonanza, District Of Columbia, 2010",
+    "about": "Lorem nisi enim ea aliquip Lorem eu fugiat sit deserunt. Ullamco fugiat tempor non magna elit veniam elit ullamco cupidatat aliquip adipisicing dolore. Officia anim excepteur nulla mollit. Elit sint incididunt nulla officia non. Magna nisi fugiat nisi irure ut incididunt do dolor reprehenderit ut ex ullamco. Duis eiusmod velit aute consequat amet ad et. Officia veniam sit enim labore enim magna irure eu sunt.\r\n",
+    "title": "Déployer une application Django sur PythonAnywhere",
+    "categories": [{
+      "id":"1",
+      "labelle":"Wordpress"
+    }]
+  },
+  {
+    "_id": "6091abf8b6ad1d8f6249a045",
+    "picture": "https://tse1.mm.bing.net/th?id=OIP.APSvjvu7iBrjuFeCOnOurAHaE6&pid=Api",
+    "name": "Burt Black",
+    "address": "962 Chester Avenue, Bonanza, District Of Columbia, 2010",
+    "about": "Lorem nisi enim ea aliquip Lorem eu fugiat sit deserunt. Ullamco fugiat tempor non magna elit veniam elit ullamco cupidatat aliquip adipisicing dolore. Officia anim excepteur nulla mollit. Elit sint incididunt nulla officia non. Magna nisi fugiat nisi irure ut incididunt do dolor reprehenderit ut ex ullamco. Duis eiusmod velit aute consequat amet ad et. Officia veniam sit enim labore enim magna irure eu sunt.\r\n",
+    "title": "Déployer une application Django sur PythonAnywhere",
+    "categories": [{
+      "id":"1",
+      "labelle":"Wordpress"
+    }]
+  },
+  {
+    "_id": "6091abf8b6ad1d8f62490724",
     "picture": "https://tse1.mm.bing.net/th?id=OIP.APSvjvu7iBrjuFeCOnOurAHaE6&pid=Api",
     "name": "Burt Black",
     "address": "962 Chester Avenue, Bonanza, District Of Columbia, 2010",
     "about": "Lorem nisi enim ea aliquip Lorem eu fugiat sit deserunt. Ullamco fugiat tempor non magna elit veniam elit ullamco cupidatat aliquip adipisicing dolore. Officia anim excepteur nulla mollit. Elit sint incididunt nulla officia non. Magna nisi fugiat nisi irure ut incididunt do dolor reprehenderit ut ex ullamco. Duis eiusmod velit aute consequat amet ad et. Officia veniam sit enim labore enim magna irure eu sunt.\r\n",
     "title": "Déployer une application Django sur PythonAnywhere",
     "categories": [
-      "Wordpress"
-    ]
-  },
-  {
-    "_id": "6091abf8b6ad1d8f6249a002",
-    "picture": "https://tse1.mm.bing.net/th?id=OIP.APSvjvu7iBrjuFeCOnOurAHaE6&pid=Api",
-    "name": "Burt Black",
-    "address": "962 Chester Avenue, Bonanza, District Of Columbia, 2010",
-    "about": "Lorem nisi enim ea aliquip Lorem eu fugiat sit deserunt. Ullamco fugiat tempor non magna elit veniam elit ullamco cupidatat aliquip adipisicing dolore. Officia anim excepteur nulla mollit. Elit sint incididunt nulla officia non. Magna nisi fugiat nisi irure ut incididunt do dolor reprehenderit ut ex ullamco. Duis eiusmod velit aute consequat amet ad et. Officia veniam sit enim labore enim magna irure eu sunt.\r\n",
-    "title": "Déployer une application Django sur PythonAnywhere",
-    "categories": [
-      "Wordpress"
-    ]
-  },
-  {
-    "_id": "6091abf8b6ad1d8f6249a002",
-    "picture": "https://tse1.mm.bing.net/th?id=OIP.APSvjvu7iBrjuFeCOnOurAHaE6&pid=Api",
-    "name": "Burt Black",
-    "address": "962 Chester Avenue, Bonanza, District Of Columbia, 2010",
-    "about": "Lorem nisi enim ea aliquip Lorem eu fugiat sit deserunt. Ullamco fugiat tempor non magna elit veniam elit ullamco cupidatat aliquip adipisicing dolore. Officia anim excepteur nulla mollit. Elit sint incididunt nulla officia non. Magna nisi fugiat nisi irure ut incididunt do dolor reprehenderit ut ex ullamco. Duis eiusmod velit aute consequat amet ad et. Officia veniam sit enim labore enim magna irure eu sunt.\r\n",
-    "title": "Déployer une application Django sur PythonAnywhere",
-    "categories": [
-      "Wordpress"
-    ]
-  },
-  {
-    "_id": "6091abf8b6ad1d8f6249a002",
-    "picture": "https://tse1.mm.bing.net/th?id=OIP.APSvjvu7iBrjuFeCOnOurAHaE6&pid=Api",
-    "name": "Burt Black",
-    "address": "962 Chester Avenue, Bonanza, District Of Columbia, 2010",
-    "about": "Lorem nisi enim ea aliquip Lorem eu fugiat sit deserunt. Ullamco fugiat tempor non magna elit veniam elit ullamco cupidatat aliquip adipisicing dolore. Officia anim excepteur nulla mollit. Elit sint incididunt nulla officia non. Magna nisi fugiat nisi irure ut incididunt do dolor reprehenderit ut ex ullamco. Duis eiusmod velit aute consequat amet ad et. Officia veniam sit enim labore enim magna irure eu sunt.\r\n",
-    "title": "Déployer une application Django sur PythonAnywhere",
-    "categories": [
-      "Wordpress"
+      {
+        "id":"1",
+        "labelle":"Wordpress"
+      },
+      {
+        "id":"2",
+        "labelle":"vitrine"
+      }
     ]
   }
 ]

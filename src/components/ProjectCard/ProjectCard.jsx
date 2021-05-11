@@ -15,14 +15,14 @@ function ProjectCard(props) {
                         <div className="Header" style={{backgroundImage: `url(`+picture+`)`, backgroundSize: "cover",}}/>
                     </header>
                     <div className="bodyCard">
-                        <img className="round" src={user} alt="The image of the user"/>
+                        <img className="round" src={user} alt="user profil picture"/>
                         <h2>{title}</h2>
                         <p>{cut_description}</p>
                     </div>
                     <div className="skills">
                         <h6>Catégories</h6>
                         <ul>
-                            {categories.map(categorie => (<li>{categorie}</li>))}
+                            {categories.map(categorie => (<li key={categorie.id} >{categorie.labelle}</li>))}
                         </ul>
                     </div>
                 </a>
