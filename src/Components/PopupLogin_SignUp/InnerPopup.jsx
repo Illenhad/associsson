@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 export default class InnerPopup extends Component {
     state={
@@ -40,6 +42,11 @@ export default class InnerPopup extends Component {
     changeFile=(event)=>{
         this.setState({
             file: URL.createObjectURL(event.target.files[0])
+        })
+    }
+    delImg=()=>{
+        this.setState({
+            file:null
         })
     }
     changeType=(event)=>{ 
@@ -274,6 +281,7 @@ export default class InnerPopup extends Component {
                                     required/>
                             </div>
                             <div className="profil_picture">
+                                <FontAwesomeIcon icon={faTimes} className="btn-del-img" onClick={this.delImg}/>
                                 <img src={this.state.file ?
                                     this.state.file
                                     :"./images/profil/empty-profil.svg"}/>
@@ -326,6 +334,7 @@ export default class InnerPopup extends Component {
                                     required/>
                             </div>
                             <div className="profil_picture">
+                                <FontAwesomeIcon icon={faTimes} className="btn-del-img" onClick={this.delImg}/>
                                 <img src={this.state.file ?
                                     this.state.file
                                     :"./images/profil/empty-profil.svg"}/>
