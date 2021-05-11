@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 export default class InnerPopup extends Component {
     state={
@@ -40,6 +42,11 @@ export default class InnerPopup extends Component {
     changeFile=(event)=>{
         this.setState({
             file: URL.createObjectURL(event.target.files[0])
+        })
+    }
+    delImg=()=>{
+        this.setState({
+            file:null
         })
     }
     changeType=(event)=>{ 
@@ -110,9 +117,31 @@ export default class InnerPopup extends Component {
     }
 
 
-
+    Return=(event)=>{
+        event.preventDefault();
+        switch(document.querySelector("form.login").style.marginLeft){
+            case "-25%":
+                this.setState({confirm:""});
+                this.setState({password:""});
+                document.querySelector("form.login").style.marginLeft = "0%";
+                document.querySelector(".title-text .login").style.marginLeft = "0%"
+            break;
+            case "-50%":
+                this.setState({confirm:""});
+                this.setState({password:""});
+                document.querySelector("form.login").style.marginLeft = "-25%";
+                document.querySelector(".title-text .login").style.marginLeft = "-25%";  
+                document.querySelector(".slide-controls").style.display = "flex"  
+            break;
+            case "-75%":
+                document.querySelector("form.login").style.marginLeft = "-50%";
+                document.querySelector(".title-text .login").style.marginLeft = "-50%"; 
+            break
+        }   
+    }
     SwaptoLogin=()=>{
         this.setState({password:""});
+        this.setState({confirm:""});
         document.querySelector("form.login").style.marginLeft = "0%";
         document.querySelector(".title-text .login").style.marginLeft = "0%"
         return
@@ -232,6 +261,7 @@ export default class InnerPopup extends Component {
                     </form>
                     { this.state.type==="asso" ?
                         <form onSubmit={this.infoAsso} className="infoAsso">
+                            <button className="btn-retour" onClick={this.Return}>Retour</button>
                             <div className="field">
                                 <input 
                                     type="text" 
@@ -251,6 +281,7 @@ export default class InnerPopup extends Component {
                                     required/>
                             </div>
                             <div className="profil_picture">
+                                <FontAwesomeIcon icon={faTimes} className="btn-del-img" onClick={this.delImg}/>
                                 <img src={this.state.file ?
                                     this.state.file
                                     :"./images/profil/empty-profil.svg"}/>
@@ -274,6 +305,7 @@ export default class InnerPopup extends Component {
                         </form>
                     :
                         <form onSubmit={this.infoVolon} className="infoVolon">
+                            <button className="btn-retour" onClick={this.Return}>Retour</button>
                             <div className="field">
                                 <input 
                                     type="text" 
@@ -302,6 +334,7 @@ export default class InnerPopup extends Component {
                                     required/>
                             </div>
                             <div className="profil_picture">
+                                <FontAwesomeIcon icon={faTimes} className="btn-del-img" onClick={this.delImg}/>
                                 <img src={this.state.file ?
                                     this.state.file
                                     :"./images/profil/empty-profil.svg"}/>
@@ -325,6 +358,7 @@ export default class InnerPopup extends Component {
                         </form>
                     }
                     <form onSubmit={this.contacts} className="contacts">
+                        <button className="btn-retour" onClick={this.Return}>Retour</button>
                         <div className="field">
                             <input 
                                 type="text" 
