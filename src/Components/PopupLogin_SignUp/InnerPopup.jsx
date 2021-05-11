@@ -6,7 +6,7 @@ export default class InnerPopup extends Component {
     state={
         mail:"",
         password:"",
-        confirm:"",
+        confirm_password:"",
         name:"",
         firstname:"",
         tel:"",
@@ -82,13 +82,13 @@ export default class InnerPopup extends Component {
             this.setState({errorSignUp:"Veuillez saisir un mot de passe"});
             return
         }
-        if (this.state.password!=this.state.confirm){
+        if (this.state.password!=this.state.confirm_password){
             this.setState({errorSignUp:"Vous avez saisis deux mots de passe différents"});
             return
         }
         
         console.log("Signup : Mail :"+this.state.mail+" Password : "+this.state.password+
-        " Confirm : "+this.state.confirm+" Type : "+this.state.type)
+        " Confirm : "+this.state.confirm_password+" Type : "+this.state.type)
         document.querySelector("form.login").style.marginLeft = "-50%";
         document.querySelector(".title-text .login").style.marginLeft = "-50%"
         document.querySelector(".slide-controls").style.display = "none"
@@ -121,13 +121,13 @@ export default class InnerPopup extends Component {
         event.preventDefault();
         switch(document.querySelector("form.login").style.marginLeft){
             case "-25%":
-                this.setState({confirm:""});
+                this.setState({confirm_password:""});
                 this.setState({password:""});
                 document.querySelector("form.login").style.marginLeft = "0%";
                 document.querySelector(".title-text .login").style.marginLeft = "0%"
             break;
             case "-50%":
-                this.setState({confirm:""});
+                this.setState({confirm_password:""});
                 this.setState({password:""});
                 document.querySelector("form.login").style.marginLeft = "-25%";
                 document.querySelector(".title-text .login").style.marginLeft = "-25%";  
@@ -141,14 +141,14 @@ export default class InnerPopup extends Component {
     }
     SwaptoLogin=()=>{
         this.setState({password:""});
-        this.setState({confirm:""});
+        this.setState({confirm_password:""});
         document.querySelector("form.login").style.marginLeft = "0%";
         document.querySelector(".title-text .login").style.marginLeft = "0%"
         return
     }
     SwaptoSignUp=()=>{
         this.setState({password:""});
-        this.setState({confirm:""});
+        this.setState({confirm_password:""});
         document.querySelector("form.login").style.marginLeft = "-25%";
         document.querySelector(".title-text .login").style.marginLeft = "-25%";
     }
@@ -231,9 +231,9 @@ export default class InnerPopup extends Component {
                             <input 
                                 type="password" 
                                 placeholder="Confirmer le mot de passe" 
-                                name="confirm"
+                                name="confirm_password"
                                 onChange={this.onChange}
-                                value={this.state.confirm}
+                                value={this.state.confirm_password}
                                 required/>
                         </div>
                         <div className="slide-controls">
@@ -282,9 +282,11 @@ export default class InnerPopup extends Component {
                             </div>
                             <div className="profil_picture">
                                 <FontAwesomeIcon icon={faTimes} className="btn-del-img" onClick={this.delImg}/>
-                                <img src={this.state.file ?
-                                    this.state.file
-                                    :"./images/profil/empty-profil.svg"}/>
+                                <div className="container-img">
+                                    <img src={this.state.file ?
+                                        this.state.file
+                                        :"./images/profil/empty-profil.svg"}/>
+                                </div>
                                 <div className="field upload-container">
                                     <input 
                                         type="file" 
@@ -335,9 +337,11 @@ export default class InnerPopup extends Component {
                             </div>
                             <div className="profil_picture">
                                 <FontAwesomeIcon icon={faTimes} className="btn-del-img" onClick={this.delImg}/>
-                                <img src={this.state.file ?
-                                    this.state.file
-                                    :"./images/profil/empty-profil.svg"}/>
+                                <div className="container-img">
+                                    <img src={this.state.file ?
+                                        this.state.file
+                                        :"./images/profil/empty-profil.svg"}/>
+                                </div>
                                 <div className="field upload-container">
                                     <input 
                                         type="file" 
@@ -345,7 +349,7 @@ export default class InnerPopup extends Component {
                                         onChange={this.changeFile}
                                         accept="image/png, image/jpeg"
                                         />
-                                    <button className="upload-btn">Importer votre Logo</button>
+                                    <button className="upload-btn">Importer un avatar</button>
                                 </div>
                             </div>
                             
