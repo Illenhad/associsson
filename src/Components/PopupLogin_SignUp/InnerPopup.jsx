@@ -110,9 +110,31 @@ export default class InnerPopup extends Component {
     }
 
 
-
+    Return=(event)=>{
+        event.preventDefault();
+        switch(document.querySelector("form.login").style.marginLeft){
+            case "-25%":
+                this.setState({confirm:""});
+                this.setState({password:""});
+                document.querySelector("form.login").style.marginLeft = "0%";
+                document.querySelector(".title-text .login").style.marginLeft = "0%"
+            break;
+            case "-50%":
+                this.setState({confirm:""});
+                this.setState({password:""});
+                document.querySelector("form.login").style.marginLeft = "-25%";
+                document.querySelector(".title-text .login").style.marginLeft = "-25%";  
+                document.querySelector(".slide-controls").style.display = "flex"  
+            break;
+            case "-75%":
+                document.querySelector("form.login").style.marginLeft = "-50%";
+                document.querySelector(".title-text .login").style.marginLeft = "-50%"; 
+            break
+        }   
+    }
     SwaptoLogin=()=>{
         this.setState({password:""});
+        this.setState({confirm:""});
         document.querySelector("form.login").style.marginLeft = "0%";
         document.querySelector(".title-text .login").style.marginLeft = "0%"
         return
@@ -232,6 +254,7 @@ export default class InnerPopup extends Component {
                     </form>
                     { this.state.type==="asso" ?
                         <form onSubmit={this.infoAsso} className="infoAsso">
+                            <button className="btn-retour" onClick={this.Return}>Retour</button>
                             <div className="field">
                                 <input 
                                     type="text" 
@@ -274,6 +297,7 @@ export default class InnerPopup extends Component {
                         </form>
                     :
                         <form onSubmit={this.infoVolon} className="infoVolon">
+                            <button className="btn-retour" onClick={this.Return}>Retour</button>
                             <div className="field">
                                 <input 
                                     type="text" 
@@ -325,6 +349,7 @@ export default class InnerPopup extends Component {
                         </form>
                     }
                     <form onSubmit={this.contacts} className="contacts">
+                        <button className="btn-retour" onClick={this.Return}>Retour</button>
                         <div className="field">
                             <input 
                                 type="text" 
