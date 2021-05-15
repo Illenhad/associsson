@@ -11,7 +11,8 @@ function Routes(props) {
             <Route path="/legal"><div>Mentions Légales</div></Route>
             <Route path="/protection-data"><div>Protections des données</div></Route>
             <Route path="/contact"><div>Nous contacter</div></Route>
-            <Route path="/add-project"><AddProject /></Route>
+            <Route path="/add-project"><AddProject creation={true} /></Route>
+            <Route path="/update-project"><AddProject creation={false} /></Route>
             <Route path="/"><div>Home</div></Route>
         </Switch>
     );

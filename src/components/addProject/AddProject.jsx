@@ -4,12 +4,33 @@ import "./addProject.css";
 export default class AddProject extends Component {
 
     state = {
-        creation: true,
-        name: '',
+        creation: this.props.creation, 
+        name: 'test',
         category: '',
         description: '',
-        items: [],
+        //items: [],
         error: ''
+    }
+
+    componentDidMount() {
+        if (!this.state.creation) {
+            
+            //TODO : appel du webservice
+
+            let projectName = 'Chantez en canon avec le roi';
+            let projectCategory = '1';
+            let projectDescription = 'Sire, ouvrez ! On en a gros !';
+
+            this.setState({
+                name: projectName,
+                category: projectCategory,
+                description: projectDescription
+            })
+
+            document.querySelector('#inputName').value = projectName;
+            document.querySelector('#selectCategory').value = projectCategory;
+            document.querySelector('#inputDescription').value = projectDescription;
+        }
     }
 
     onChange = (event) => {
@@ -23,7 +44,6 @@ export default class AddProject extends Component {
 
         //check input
         let boolError = false;
-
         
         if (this.state.name == '') {
             this.setState({error: 'Vous devez saisir un nom de projet'});
@@ -45,12 +65,13 @@ export default class AddProject extends Component {
                 name: '',
                 category: '',
                 description: '',
+                /*
                 items: [...this.state.items, {
                     name: this.state.name,
                     category: this.state.category,
                     description: this.state.description
                     }
-                ]
+                ]*/
             })
         }
         
@@ -80,17 +101,18 @@ export default class AddProject extends Component {
                 <form onSubmit={this.onSubmit}>
                     <div class="name-and-category input-container">
                         <div class="info-unit unit-name">
-                            <label class="label" for="name">Nom</label>
+                            <label id="inputName" class="label" for="name">Nom</label>
                             <input class="input-name class-input"
                                 type="text" 
                                 name="name" 
                                 onChange={this.onChange}
-                                value={this.state.nom}
+                                value={this.state.name}
                             />
                         </div>
                         <div class="info-unit unit-category">
                             <label class="label" for="category">Catégorie</label>
                             <select 
+                                id = "selectCategory"
                                 class="class-input select-category"
                                 name="category"
                                 onChange={this.onChange}
@@ -107,6 +129,7 @@ export default class AddProject extends Component {
                     <div class="info-unit unit-description input-container">
                         <label class="label" for="description">Description</label>
                         <textarea 
+                            id="inputDescription"
                             class="class-input input-description"
                             name="description" 
                             rows="5"
