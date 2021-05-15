@@ -79,6 +79,12 @@ form {
     min-height: 200px;
 }
 
+.error {
+    background-color: var(--bg-error);
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
 /*Responsive tablette*/
 @media screen and (max-width: 1200px) {
 
@@ -158,6 +164,11 @@ form {
 
     .input-description {
         min-height: 200px;
+    }
+
+    .error {
+        margin-left: 15%;
+        margin-right: 15%;
     }
     
 }

@@ -4,10 +4,12 @@ import "./addProject.css";
 export default class AddProject extends Component {
 
     state = {
+        creation: true,
         name: '',
         category: '',
         description: '',
-        items: []
+        items: [],
+        error: ''
     }
 
     onChange = (event) => {
@@ -18,24 +20,48 @@ export default class AddProject extends Component {
 
     onSubmit = (event) => {
         event.preventDefault();
-        this.setState({
-            name: '',
-            category: '',
-            description: '',
-            items: [...this.state.items, {
-                name: this.state.name,
-                category: this.state.category,
-                description: this.state.description
-                }
-            ]
-        })
+
+        //check input
+        let boolError = false;
+
+        
+        if (this.state.name == '') {
+            this.setState({error: 'Vous devez saisir un nom de projet'});
+            boolError = true;
+        }
+
+        if (!boolError && this.state.category == '') {
+            this.setState({error: 'Vous devez saisir une catégorie'});
+            boolError = true;
+        }
+
+        if (!boolError && this.state.description == '') {
+            this.setState({error: 'Vous devez saisir une description'});
+            boolError = true;
+        }
+
+        if (!boolError) {
+            this.setState({
+                name: '',
+                category: '',
+                description: '',
+                items: [...this.state.items, {
+                    name: this.state.name,
+                    category: this.state.category,
+                    description: this.state.description
+                    }
+                ]
+            })
+        }
+        
     }
 
     createProject = () => {
         // TODO -> appeler le webservice qui enregistre le projet en base
 
         //TEST
-        /* return this.state.items.map((item, index) => {
+        /*
+        return this.state.items.map((item, index) => {
             return(
                 <div key={index}>
                     <h3>{item.name}</h3>
@@ -49,7 +75,8 @@ export default class AddProject extends Component {
     render() {
         return (
             <div id="container">
-                <h1>Nouveau projet</h1>
+                <h1>{this.state.creation ? "Nouveau projet" : "Modifier un projet"} </h1>
+                { this.state.error != '' ? <div class="error">{this.state.error}</div> : null }
                 <form onSubmit={this.onSubmit}>
                     <div class="name-and-category input-container">
                         <div class="info-unit unit-name">
@@ -89,7 +116,7 @@ export default class AddProject extends Component {
                     </div>
                     <input class="button" type="submit" value="Valider" />
                 </form>
-                
+
             </div>
         )
     }
