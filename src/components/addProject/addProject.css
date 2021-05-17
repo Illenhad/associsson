@@ -85,6 +85,10 @@ form {
     margin-right: 30%;
 }
 
+.ckeditor-paragraph {
+    color:black;
+}
+
 /*Responsive tablette*/
 @media screen and (max-width: 1200px) {
 

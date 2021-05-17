@@ -1,25 +1,29 @@
 import React, { Component } from 'react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import "./addProject.css";
 
 export default class AddProject extends Component {
 
     state = {
         creation: this.props.creation, 
-        name: 'test',
+        name: '',
         category: '',
         description: '',
-        //items: [],
+        items: [],
         error: ''
     }
 
     componentDidMount() {
+
+        let projectDescription = '';
+
         if (!this.state.creation) {
             
             //TODO : appel du webservice
 
             let projectName = 'Chantez en canon avec le roi';
             let projectCategory = '1';
-            let projectDescription = 'Sire, ouvrez ! On en a gros !';
+            projectDescription = '<p>Sire, ouvrez !</p><p>On en a gros !</p>';
 
             this.setState({
                 name: projectName,
@@ -29,14 +33,33 @@ export default class AddProject extends Component {
 
             document.querySelector('#inputName').value = projectName;
             document.querySelector('#selectCategory').value = projectCategory;
-            document.querySelector('#inputDescription').value = projectDescription;
         }
+
+        ClassicEditor
+            .create(document.querySelector('#ckeditor'), {
+                toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
+                heading: {
+                    options: [
+                        { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+                        { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+                        { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' }
+                    ]
+                }
+            })
+            .then(editor => {
+                editor.setData(projectDescription);
+                this.setState({descriptionEditor: editor});
+            })
     }
 
     onChange = (event) => {
         this.setState ({
             [event.target.name] : event.target.value
         });
+    }
+
+    handleCkeditor = (event, editor) => {
+        this.setState({description: editor.getData()});
     }
 
     onSubmit = (event) => {
@@ -55,7 +78,7 @@ export default class AddProject extends Component {
             boolError = true;
         }
 
-        if (!boolError && this.state.description == '') {
+        if (!boolError && this.state.descriptionEditor.getData() == '') {
             this.setState({error: 'Vous devez saisir une description'});
             boolError = true;
         }
@@ -65,13 +88,13 @@ export default class AddProject extends Component {
                 name: '',
                 category: '',
                 description: '',
-                /*
+                
                 items: [...this.state.items, {
                     name: this.state.name,
                     category: this.state.category,
-                    description: this.state.description
+                    description: this.state.descriptionEditor.getData()
                     }
-                ]*/
+                ]
             })
         }
         
@@ -128,18 +151,10 @@ export default class AddProject extends Component {
                     </div>
                     <div class="info-unit unit-description input-container">
                         <label class="label" for="description">Description</label>
-                        <textarea 
-                            id="inputDescription"
-                            class="class-input input-description"
-                            name="description" 
-                            rows="5"
-                            onChange={this.onChange}
-                            value={this.state.description}
-                        />
+                        <div id="ckeditor" />
                     </div>
                     <input class="button" type="submit" value="Valider" />
                 </form>
-
             </div>
         )
     }
