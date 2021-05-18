@@ -321,10 +321,11 @@ object-fit: contain;
 }
 
 
-@media (max-height:470px){
+@media (max-height:470px) and (max-width:470px) {
   .wrapper{
     position: absolute;
     top:0;
+    left:0;
     transform:initial
   }
 }
@@ -332,7 +333,15 @@ object-fit: contain;
   .wrapper{
     position: absolute;
     left:0;
-    transform:initial
+    transform:translateX(-50%);
+  }
+}
+
+@media (max-height:470px)  {
+  .wrapper{
+    position: absolute;
+    top:0;
+    transform:translateY(-50%);
   }
 }
 @keyframes AppearError {
