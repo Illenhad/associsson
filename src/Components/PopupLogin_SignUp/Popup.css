@@ -33,7 +33,7 @@
 .wrapper .wrapper_close{
     position: absolute;
     display: block;
-    color: var(--light-bg);
+    color: #fff;
     right: 15px;
     background: none;
     top:15px;
@@ -60,7 +60,7 @@
 .wrapper .title{
   width: 25%;
   font-size: 35px;
-  color:var(--light-bg);
+  color:#fff;
   font-weight: 600;
   text-align: center;
   transition: all 0.6s ease;
@@ -95,7 +95,7 @@
 .slide-controls label.login,
 .slide-controls label.asso,
 .slide-controls label.volon{
-  color: var(--light-bg);
+  color: #fff;
 }
 
 .slide-controls .slider-tab{
@@ -190,7 +190,7 @@ form .field input:focus::placeholder{
 }
 .form-inner form .pass-link a,
 .form-inner form .signup-link a{
-  color: var(--light-bg);
+  color: #fff;
   text-decoration: none;
 }
 .form-inner form .pass-link a:hover,
@@ -245,7 +245,15 @@ form .btn:hover .btn-layer{
   display: flex;
   margin-top: 20px;
 }
-.profil_picture img{
+.profil_picture .container-img{
+display: block;
+width:100px;
+height: 100px;
+border-radius: 50%;
+background: var(--light-accentuation);
+object-fit: contain;
+}
+.profil_picture  .container-img img{
   display: block;
   width:100px;
   height: 100px;
@@ -258,25 +266,23 @@ form .btn:hover .btn-layer{
   position: relative;
   overflow: hidden;
   display: inline-block;
-  
   cursor: pointer;
 }
 
 .upload-btn{
   border: 2px solid var(--light-accentuation);
-  color: var(--light-bg);
+  color: #fff;
   background: var(--light-first);
   padding: 8px 8px;
   border-radius: 8px;
   font-size: 17px;
-  font-weight: bold;
   cursor: pointer;
 }
 .btn-del-img{
   position: relative;
   background: var(--light-accentuation);
   display: block;
-  color: var(--light-bg);
+  color: #fff;
   border: solid 3px var(--light-accentuation);
   border-radius: 50%;
   width: 30px!important;
@@ -292,8 +298,8 @@ form .btn:hover .btn-layer{
 .btn-retour {
   position: relative;
   left:-35%;
-  border: 2px solid var(--bg-error);
-  color: var(--bg-error);
+  border: 2px solid #fff;
+  color: #fff;
   background: var(--light-first);
   padding: 0px 10px;
   border-radius: 8px;
@@ -301,7 +307,10 @@ form .btn:hover .btn-layer{
   font-weight: bold;
   cursor: pointer;
 }
-
+.btn-retour:hover {
+  color: var(--light-first);
+  background: #fff;
+}
 .upload-container input[type=file] {
   font-size: 100px;
   position: absolute;
@@ -312,16 +321,26 @@ form .btn:hover .btn-layer{
 }
 
 
-@media (max-height:470px){
-  .wrapper{
-    position: absolute;
-    top:0;
-    transform:initial
-  }
-}
 @media (max-width:470px){
   .wrapper{
     position: absolute;
+    left:0;
+    transform:translateY(-50%);
+  }
+}
+
+@media (max-height:470px)  {
+  .wrapper{
+    position: absolute;
+    top:0;
+    transform:translateX(-50%);
+  }
+}
+
+@media (max-height:470px) and (max-width:470px) {
+  .wrapper{
+    position: absolute;
+    top:0;
     left:0;
     transform:initial
   }

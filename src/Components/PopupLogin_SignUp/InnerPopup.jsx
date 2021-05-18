@@ -6,7 +6,7 @@ export default class InnerPopup extends Component {
     state={
         mail:"",
         password:"",
-        confirm:"",
+        confirm_password:"",
         name:"",
         firstname:"",
         tel:"",
@@ -17,11 +17,7 @@ export default class InnerPopup extends Component {
         region:"",
         pays:"",
         type:"asso",
-        errorLogin:"",
-        errorSignUp:"",
-        errorInfoAsso:"",
-        errorInfoVolon:"",
-        errorContact:"",
+        error:"",
     }
 
     checkEmail=(email)=>{
@@ -34,15 +30,26 @@ export default class InnerPopup extends Component {
         return re.test(tel);
     }
 
+    checkFile=(file)=> {
+        const acceptedImageTypes = ['image/jpeg', 'image/png'];
+        return file && acceptedImageTypes.includes(file['type'])
+    }
+
     onChange=(event)=>{ 
         this.setState({
             [event.target.name]:event.target.value
         })
     }
     changeFile=(event)=>{
+        if(this.checkFile(event.target.files[0])){
         this.setState({
             file: URL.createObjectURL(event.target.files[0])
         })
+        } else {
+            this.setState({
+                error: "Veuillez choisir une image de type jpeg ou png "
+            })
+        }
     }
     delImg=()=>{
         this.setState({
@@ -57,13 +64,13 @@ export default class InnerPopup extends Component {
 
     login=(event)=>{
         event.preventDefault();
-        this.setState({errorLogin:""})
+        this.setState({error:""})
         if (!this.checkEmail(this.state.mail)){
-            this.setState({errorLogin:"Veuillez saisir une adresse mail valide"});
+            this.setState({error:"Veuillez saisir une adresse mail valide"});
             return
         }
         if (this.state.password===""){
-            this.setState({errorLogin:"Veuillez saisir votre mot de passe"});
+            this.setState({error:"Veuillez saisir votre mot de passe"});
             return
         }
         
@@ -73,22 +80,22 @@ export default class InnerPopup extends Component {
     
     signup=(event)=>{
         event.preventDefault();
-        this.setState({errorSignUp:""})
+        this.setState({error:""})
         if (!this.checkEmail(this.state.mail)){
-            this.setState({errorSignUp:"Veuillez saisir une adresse mail valide"});
+            this.setState({error:"Veuillez saisir une adresse mail valide"});
             return
         }
         if (this.state.password===""){
-            this.setState({errorSignUp:"Veuillez saisir un mot de passe"});
+            this.setState({error:"Veuillez saisir un mot de passe"});
             return
         }
-        if (this.state.password!=this.state.confirm){
-            this.setState({errorSignUp:"Vous avez saisis deux mots de passe différents"});
+        if (this.state.password!=this.state.confirm_password){
+            this.setState({error:"Vous avez saisis deux mots de passe différents"});
             return
         }
         
         console.log("Signup : Mail :"+this.state.mail+" Password : "+this.state.password+
-        " Confirm : "+this.state.confirm+" Type : "+this.state.type)
+        " Confirm : "+this.state.confirm_password+" Type : "+this.state.type)
         document.querySelector("form.login").style.marginLeft = "-50%";
         document.querySelector(".title-text .login").style.marginLeft = "-50%"
         document.querySelector(".slide-controls").style.display = "none"
@@ -96,9 +103,9 @@ export default class InnerPopup extends Component {
 
     infoAsso=(event)=>{
         event.preventDefault();
-        this.setState({errorInfoAsso:""})
+        this.setState({error:""})
         if (!this.checkTel(this.state.tel)){
-            this.setState({errorInfoAsso:"Veuillez saisir un numéro de téléphone valide"})
+            this.setState({error:"Veuillez saisir un numéro de téléphone valide"})
             return;
         }
         document.querySelector("form.login").style.marginLeft = "-75%";
@@ -107,9 +114,9 @@ export default class InnerPopup extends Component {
 
     infoVolon=(event)=>{
         event.preventDefault();
-        this.setState({errorInfoVolon:""})
+        this.setState({error:""})
         if (!this.checkTel(this.state.tel)){
-            this.setState({errorInfoVolon:"Veuillez saisir un numéro de téléphone valide"})
+            this.setState({error:"Veuillez saisir un numéro de téléphone valide"})
             return;
         }
         document.querySelector("form.login").style.marginLeft = "-75%";
@@ -117,17 +124,18 @@ export default class InnerPopup extends Component {
     }
 
 
-    Return=(event)=>{
+    Retour=(event)=>{
         event.preventDefault();
+        this.setState({error:""})
         switch(document.querySelector("form.login").style.marginLeft){
             case "-25%":
-                this.setState({confirm:""});
+                this.setState({confirm_password:""});
                 this.setState({password:""});
                 document.querySelector("form.login").style.marginLeft = "0%";
                 document.querySelector(".title-text .login").style.marginLeft = "0%"
             break;
             case "-50%":
-                this.setState({confirm:""});
+                this.setState({confirm_password:""});
                 this.setState({password:""});
                 document.querySelector("form.login").style.marginLeft = "-25%";
                 document.querySelector(".title-text .login").style.marginLeft = "-25%";  
@@ -141,14 +149,16 @@ export default class InnerPopup extends Component {
     }
     SwaptoLogin=()=>{
         this.setState({password:""});
-        this.setState({confirm:""});
+        this.setState({confirm_password:""});
+        this.setState({error:""})
         document.querySelector("form.login").style.marginLeft = "0%";
         document.querySelector(".title-text .login").style.marginLeft = "0%"
         return
     }
     SwaptoSignUp=()=>{
         this.setState({password:""});
-        this.setState({confirm:""});
+        this.setState({confirm_password:""});
+        this.setState({error:""})
         document.querySelector("form.login").style.marginLeft = "-25%";
         document.querySelector(".title-text .login").style.marginLeft = "-25%";
     }
@@ -201,7 +211,7 @@ export default class InnerPopup extends Component {
                         <div className="pass-link">
                             <a href="#">Mot de passe oublié?</a>
                         </div>
-                        {this.state.errorLogin!="" ? <div className="error">{this.state.errorLogin}</div> : null}
+                        {this.state.error!="" ? <div className="error">{this.state.error}</div> : null}
                         <div className="field btn">
                             <div className="btn-layer">
                             </div>
@@ -231,9 +241,9 @@ export default class InnerPopup extends Component {
                             <input 
                                 type="password" 
                                 placeholder="Confirmer le mot de passe" 
-                                name="confirm"
+                                name="confirm_password"
                                 onChange={this.onChange}
-                                value={this.state.confirm}
+                                value={this.state.confirm_password}
                                 required/>
                         </div>
                         <div className="slide-controls">
@@ -252,7 +262,7 @@ export default class InnerPopup extends Component {
                             <div className="slider-tab">
                             </div>
                         </div>
-                        {this.state.errorSignUp!="" ? <div className="error">{this.state.errorSignUp}</div> : null}
+                        {this.state.error!="" ? <div className="error">{this.state.error}</div> : null}
                         <div className="field btn">
                             <div className="btn-layer">
                             </div>      
@@ -261,7 +271,7 @@ export default class InnerPopup extends Component {
                     </form>
                     { this.state.type==="asso" ?
                         <form onSubmit={this.infoAsso} className="infoAsso">
-                            <button className="btn-retour" onClick={this.Return}>Retour</button>
+                            <button className="btn-retour" type="button" onClick={this.Retour}>Retour</button>
                             <div className="field">
                                 <input 
                                     type="text" 
@@ -282,9 +292,11 @@ export default class InnerPopup extends Component {
                             </div>
                             <div className="profil_picture">
                                 <FontAwesomeIcon icon={faTimes} className="btn-del-img" onClick={this.delImg}/>
-                                <img src={this.state.file ?
-                                    this.state.file
-                                    :"./images/profil/empty-profil.svg"}/>
+                                <div className="container-img">
+                                    <img src={this.state.file ?
+                                        this.state.file
+                                        :"./images/profil/empty-profil.svg"}/>
+                                </div>
                                 <div className="field upload-container">
                                     <input 
                                         type="file" 
@@ -296,7 +308,7 @@ export default class InnerPopup extends Component {
                                 </div>
                             </div>
                         
-                            {this.state.errorInfoAsso!="" ? <div className="error">{this.state.errorInfoAsso}</div> : null}
+                            {this.state.error!="" ? <div className="error">{this.state.error}</div> : null}
                             <div className="field btn">
                                 <div className="btn-layer">
                                 </div>      
@@ -305,7 +317,7 @@ export default class InnerPopup extends Component {
                         </form>
                     :
                         <form onSubmit={this.infoVolon} className="infoVolon">
-                            <button className="btn-retour" onClick={this.Return}>Retour</button>
+                            <button className="btn-retour" type="button" onClick={this.Retour}>Retour</button>
                             <div className="field">
                                 <input 
                                     type="text" 
@@ -335,9 +347,11 @@ export default class InnerPopup extends Component {
                             </div>
                             <div className="profil_picture">
                                 <FontAwesomeIcon icon={faTimes} className="btn-del-img" onClick={this.delImg}/>
-                                <img src={this.state.file ?
-                                    this.state.file
-                                    :"./images/profil/empty-profil.svg"}/>
+                                <div className="container-img">
+                                    <img src={this.state.file ?
+                                        this.state.file
+                                        :"./images/profil/empty-profil.svg"}/>
+                                </div>
                                 <div className="field upload-container">
                                     <input 
                                         type="file" 
@@ -345,11 +359,11 @@ export default class InnerPopup extends Component {
                                         onChange={this.changeFile}
                                         accept="image/png, image/jpeg"
                                         />
-                                    <button className="upload-btn">Importer votre Logo</button>
+                                    <button className="upload-btn">Importer un avatar</button>
                                 </div>
                             </div>
                             
-                            {this.state.errorInfoVolon!="" ? <div className="error">{this.state.errorInfoVolon}</div> : null}
+                            {this.state.error!="" ? <div className="error">{this.state.error}</div> : null}
                             <div className="field btn">
                                 <div className="btn-layer">
                                 </div>      
@@ -404,7 +418,7 @@ export default class InnerPopup extends Component {
                                 value={this.state.pays}
                                 required/>
                         </div>
-                        {this.state.errorContact!="" ? <div className="error">{this.state.errorContact}</div> : null}
+                        {this.state.error!="" ? <div className="error">{this.state.error}</div> : null}
                         <div className="field btn">
                             <div className="btn-layer">
                             </div>      
