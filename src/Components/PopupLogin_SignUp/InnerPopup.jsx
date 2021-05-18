@@ -29,7 +29,7 @@ export default class InnerPopup extends Component {
         var re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
         return re.test(tel);
     }
-    
+
     checkFile=(file)=> {
         const acceptedImageTypes = ['image/jpeg', 'image/png'];
         return file && acceptedImageTypes.includes(file['type'])
@@ -124,7 +124,7 @@ export default class InnerPopup extends Component {
     }
 
 
-    Return=(event)=>{
+    Retour=(event)=>{
         event.preventDefault();
         this.setState({error:""})
         switch(document.querySelector("form.login").style.marginLeft){
@@ -271,7 +271,7 @@ export default class InnerPopup extends Component {
                     </form>
                     { this.state.type==="asso" ?
                         <form onSubmit={this.infoAsso} className="infoAsso">
-                            <button className="btn-retour" onClick={this.Return}>Retour</button>
+                            <button className="btn-retour" type="button" onClick={this.Retour}>Retour</button>
                             <div className="field">
                                 <input 
                                     type="text" 
@@ -317,7 +317,7 @@ export default class InnerPopup extends Component {
                         </form>
                     :
                         <form onSubmit={this.infoVolon} className="infoVolon">
-                            <button className="btn-retour" onClick={this.Return}>Retour</button>
+                            <button className="btn-retour" type="button" onClick={this.Retour}>Retour</button>
                             <div className="field">
                                 <input 
                                     type="text" 
