@@ -224,6 +224,8 @@ form .btn:hover .btn-layer{
   color: #fff;
   padding: 10px;
   border-radius: 5px;
+  margin-left: 0px;
+  margin-right: 0px;
   animation: AppearError 0.1s linear;;
 }
 .submit{
