@@ -78,7 +78,7 @@ export default class InnerPopup extends Component {
         console.log("Login : Mail :"+this.state.mail+" Password : "+this.state.password)
     }
     
-    signup=(event)=>{
+    startSignup=(event)=>{
         event.preventDefault();
         this.setState({error:""})
         if (!this.checkEmail(this.state.mail)){
@@ -121,6 +121,10 @@ export default class InnerPopup extends Component {
         }
         document.querySelector("form.login").style.marginLeft = "-75%";
         document.querySelector(".title-text .login").style.marginLeft = "-75%"
+    }
+    signup=(event)=>{
+        event.preventDefault();
+        this.setState({error:""})
     }
 
 
@@ -213,12 +217,10 @@ export default class InnerPopup extends Component {
                         </div>
                         {this.state.error!="" ? <div className="error">{this.state.error}</div> : null}
                         <div className="field btn">
-                            <div className="btn-layer">
-                            </div>
-                            <button className="submit">Se connecter</button>
+                            <button className="submit btn-layer">Se connecter</button>
                         </div>
                     </form>
-                    <form onSubmit={this.signup} className="signup">
+                    <form onSubmit={this.startSignup} className="signup">
                         <div className="field">
                             <input 
                                 type="text" 
@@ -264,9 +266,7 @@ export default class InnerPopup extends Component {
                         </div>
                         {this.state.error!="" ? <div className="error">{this.state.error}</div> : null}
                         <div className="field btn">
-                            <div className="btn-layer">
-                            </div>      
-                            <button className="submit"> S'inscrire</button>
+                            <button className="submit btn-layer"> S'inscrire</button>
                         </div>
                     </form>
                     { this.state.type==="asso" ?
@@ -309,10 +309,8 @@ export default class InnerPopup extends Component {
                             </div>
                         
                             {this.state.error!="" ? <div className="error">{this.state.error}</div> : null}
-                            <div className="field btn">
-                                <div className="btn-layer">
-                                </div>      
-                                <button className="submit"> Continuer</button>
+                            <div className="field btn">      
+                                <button className="submit btn-layer"> Continuer</button>
                             </div>
                         </form>
                     :
@@ -365,14 +363,12 @@ export default class InnerPopup extends Component {
                             
                             {this.state.error!="" ? <div className="error">{this.state.error}</div> : null}
                             <div className="field btn">
-                                <div className="btn-layer">
-                                </div>      
-                                <button className="submit"> Continuer</button>
+                                <button className="submit btn-layer"> Continuer</button>
                             </div>
                         </form>
                     }
                     <form onSubmit={this.contacts} className="contacts">
-                        <button className="btn-retour" onClick={this.Return}>Retour</button>
+                        <button className="btn-retour" onClick={this.Retour}>Retour</button>
                         <div className="field">
                             <input 
                                 type="text" 
@@ -420,9 +416,7 @@ export default class InnerPopup extends Component {
                         </div>
                         {this.state.error!="" ? <div className="error">{this.state.error}</div> : null}
                         <div className="field btn">
-                            <div className="btn-layer">
-                            </div>      
-                            <button className="submit"> S'inscrire</button>
+                            <button className="submit btn-layer" type="submit"> S'inscrire</button>
                         </div>
                     </form>
                 </div>

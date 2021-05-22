@@ -211,12 +211,8 @@ form .btn .btn-layer{
   left: -100%;
   background: var(--light-accentuation);
   border-radius: 5px;
-  transition: all 0.4s ease;;
 }
 
-form .btn:hover .btn-layer{
-  left: 0;
-}
 .wrapper .error{
   width: 100%;
   background: var(--bg-error);
