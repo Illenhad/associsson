@@ -5,11 +5,30 @@
     margin-bottom: 1em;
     margin-top: 0.5em;
     width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#content {
+    border: solid 0.5px var(--light-second);
+    width: 80%;
+    display: flex;
+}
+
+#image {
+    width: 40%;
+    background-color: var(--light-first);
+}
+
+#form-content {
+    width: 60%;
+    background-color: white;
 }
 
 h1 {
     text-align: center;
     margin-bottom: 0.5em;
+    margin-top: 0.5em;
     color: var(--light-accentuation);
     font-size: 1.2em;
 }
@@ -41,6 +60,7 @@ form {
     font-size: 1em;
     font-weight: 550;
     width: 20%;
+    margin-bottom: 0.5%;
 }
 
 .class-input {
@@ -51,32 +71,21 @@ form {
 }
 
 .input-container {
-    padding-left: 15%;
-    padding-right: 15%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .input-name, .select-category {
-    background-color: var(--light-bg);
     border-bottom: 2px solid;
     border-bottom-color: var(--light-second);
 }
 
-.name-and-category {
-    display: flex;
-    justify-content: space-around;
-}
-
-.unit-name {
-    flex: 1.1;
-}
-
-.unit-category {
-    flex: 0.9;
-    margin-left: 5%;
-}
-
 .input-description {
     min-height: 200px;
+}
+
+.unit-description {
+    flex-direction: column;
 }
 
 .error {
@@ -85,15 +94,40 @@ form {
     margin-right: 30%;
 }
 
-.ckeditor-paragraph {
-    color:black;
+.ck-editor__editable {
+    width: 600px;
+    height: 150px;
+}
+
+@media screen and (max-width: 1400px) {
+    .ck-editor__editable {
+        width: 550px;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .ck-editor__editable {
+        width: 500px;
+    }
 }
 
 /*Responsive tablette*/
 @media screen and (max-width: 1200px) {
 
-    .name-and-category {
-        flex-direction: column;
+    #image {
+        width: 25%;
+    }
+
+    #form-content {
+        width: 75%;
+    }
+
+    #content {
+        width: 90%;
+    }
+
+    .ck-editor__editable {
+        width: 650px;
     }
 
     .input-container {
@@ -118,13 +152,9 @@ form {
         min-height: 30px;
     }
 
-    .unit-description {
-        flex-direction: column;
-    }
-
     .info-unit {
-        padding-left: 15%;
-        padding-right: 15%;
+        padding-left: 5%;
+        padding-right: 5%;
     }
 
     .button {
@@ -139,8 +169,70 @@ form {
         min-height: 250px;
     }
 
+}
+
+@media screen and (max-width: 1100px) {
+    .ck-editor__editable {
+        width: 600px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .ck-editor__editable {
+        width: 550px;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .ck-editor__editable {
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .ck-editor__editable {
+        width: 450px;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .ck-editor__editable {
+        width: 410px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .ck-editor__editable {
+        width: 370px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .ck-editor__editable {
+        width: 340px;
+    }
+}
+
 /*Responsive mobile*/
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 600px) {
+
+    #image {
+        width: 0%;
+    }
+
+    #form-content {
+        width: 100%;
+        background-color: var(--light-bg);
+    }
+
+    #content {
+        width: 100%;
+        border: none;
+    }
+
+    .ck-editor__editable {
+        width: 490px;
+    }
 
     h1 {
         font-size: 1.5em
@@ -152,6 +244,7 @@ form {
 
     .input-name, .select-category {
         min-height: 30px;
+        background-color: var(--light-bg);
     }
 
     .button {
@@ -177,4 +270,50 @@ form {
     
 }
 
+@media screen and (max-width: 570px) {
+    .ck-editor__editable {
+        width: 460px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .ck-editor__editable {
+        width: 430px;
+    }
+}
+
+@media screen and (max-width: 510px) {
+    .ck-editor__editable {
+        width: 390px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .ck-editor__editable {
+        width: 370px;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .ck-editor__editable {
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .ck-editor__editable {
+        width: 330px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .ck-editor__editable {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .ck-editor__editable {
+        width: 280px;
+    }
 }

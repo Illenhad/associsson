@@ -37,19 +37,13 @@ export default class AddProject extends Component {
 
         ClassicEditor
             .create(document.querySelector('#ckeditor'), {
-                toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
-                heading: {
-                    options: [
-                        { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
-                        { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
-                        { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' }
-                    ]
-                }
+                toolbar: ['bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
             })
             .then(editor => {
                 editor.setData(projectDescription);
                 this.setState({descriptionEditor: editor});
-            })
+            })  
+
     }
 
     onChange = (event) => {
@@ -119,42 +113,47 @@ export default class AddProject extends Component {
     render() {
         return (
             <div id="container">
-                <h1>{this.state.creation ? "Nouveau projet" : "Modifier un projet"} </h1>
-                { this.state.error != '' ? <div class="error">{this.state.error}</div> : null }
-                <form onSubmit={this.onSubmit}>
-                    <div class="name-and-category input-container">
-                        <div class="info-unit unit-name">
-                            <label id="inputName" class="label" for="name">Nom</label>
-                            <input class="input-name class-input"
-                                type="text" 
-                                name="name" 
-                                onChange={this.onChange}
-                                value={this.state.name}
-                            />
-                        </div>
-                        <div class="info-unit unit-category">
-                            <label class="label" for="category">Catégorie</label>
-                            <select 
-                                id = "selectCategory"
-                                class="class-input select-category"
-                                name="category"
-                                onChange={this.onChange}
-                                value={this.state.nom}
-                                >
-                                {/* TODO : appeler le webservice qui retourne les catégories enregistrées en base */}
-                                <option value="">--Sélectionnez une catégorie</option>
-                                <option value="1">Site Internet</option>
-                                <option value="2">Logiciel administratif</option>
-                                <option value="3">Application mobile</option>
-                            </select>
-                        </div>
+                <div id="content">
+                    <div id="image"></div>
+                    <div id="form-content">
+                        <h1>{this.state.creation ? "Nouveau projet" : "Modifier un projet"} </h1>
+                        { this.state.error != '' ? <div class="error">{this.state.error}</div> : null }
+                        <form onSubmit={this.onSubmit}>
+                            <div class="name-and-category input-container">
+                                <div class="info-unit unit-name">
+                                    <label id="inputName" class="label" for="name">Nom</label>
+                                    <input class="input-name class-input"
+                                        type="text" 
+                                        name="name" 
+                                        onChange={this.onChange}
+                                        value={this.state.name}
+                                    />
+                                </div>
+                                <div class="info-unit unit-category">
+                                    <label class="label" for="category">Catégorie</label>
+                                    <select 
+                                        id = "selectCategory"
+                                        class="class-input select-category"
+                                        name="category"
+                                        onChange={this.onChange}
+                                        value={this.state.nom}
+                                        >
+                                        {/* TODO : appeler le webservice qui retourne les catégories enregistrées en base */}
+                                        <option value="">--Sélectionnez une catégorie</option>
+                                        <option value="1">Site Internet</option>
+                                        <option value="2">Logiciel administratif</option>
+                                        <option value="3">Application mobile</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="info-unit unit-description input-container">
+                                <label class="label" for="description">Description</label>
+                                <div id="ckeditor" />
+                            </div>
+                            <input class="button" type="submit" value="Valider" />
+                        </form>
                     </div>
-                    <div class="info-unit unit-description input-container">
-                        <label class="label" for="description">Description</label>
-                        <div id="ckeditor" />
-                    </div>
-                    <input class="button" type="submit" value="Valider" />
-                </form>
+                </div>
             </div>
         )
     }
